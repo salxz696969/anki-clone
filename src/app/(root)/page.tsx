@@ -1,5 +1,9 @@
+import Home from "./Home";
+
 const page = () => {
-	return <div>Home</div>;
+	return <>
+		<Home/>
+	</>;
 };
 
 export default page;
