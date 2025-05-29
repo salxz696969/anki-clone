@@ -27,6 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><title>Anki-Clone</title></head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
