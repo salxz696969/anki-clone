@@ -4,10 +4,10 @@ import LogOut from "./LogOut";
 
 const page = () => {
 	return (
-		<div>
+		<>
 			<LogOut />
 			<Ankifunctionality />
-		</div>
+		</>
 	);
 };
 

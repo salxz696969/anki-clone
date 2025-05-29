@@ -128,6 +128,7 @@ const Ankifunctionality = () => {
 
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen bg-slate-900 p-4">
+
 			<div className="bg-slate-800 shadow-2xl rounded-lg p-8 w-full max-w-lg border border-slate-600">
 				<div className="mb-8">
 					<label className="block text-white font-medium mb-2">

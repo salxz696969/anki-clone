@@ -1,10 +1,8 @@
 import SignUpForm from './SignUpForm';
 const page = () => {
-	return <div>
-        <h1>
+	return <>
             <SignUpForm/>
-        </h1>
-    </div>;
+    </>;
 };
 
 export default page;
