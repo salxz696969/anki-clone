@@ -32,16 +32,16 @@ const Ankifunctionality = () => {
 			/>
 			<div className="flex gap-3">
 				<button
-					className="flex-1 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-					onClick={submit}
-				>
-					Submit
-				</button>
-				<button
 					className="flex-1 bg-slate-600 hover:bg-slate-700 active:bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/20 hover:border-white/40 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
 					onClick={() => setComponentMode("skip")}
 				>
 					Skip
+				</button>
+				<button
+					className="flex-1 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+					onClick={submit}
+				>
+					Submit
 				</button>
 			</div>
 		</>
@@ -128,7 +128,6 @@ const Ankifunctionality = () => {
 
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen bg-slate-900 p-4">
-
 			<div className="bg-slate-800 shadow-2xl rounded-lg p-8 w-full max-w-lg border border-slate-600">
 				<div className="mb-8">
 					<label className="block text-white font-medium mb-2">
