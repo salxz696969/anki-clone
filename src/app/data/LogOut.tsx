@@ -1,24 +1,25 @@
 "use client";
-import React, { useEffect } from "react";
-import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import { auth } from "@/firebase/firebaseConfig";
-import useGetUserData from "./userData/useGetUserData";
+import { useRouter } from "next/navigation";
 
 const LogOut = () => {
-	const { user } = useGetUserData();
-	
+	const [user, setUser] = useState<User>();
+	const router=useRouter()
 	const logOut = async () => {
 		await signOut(auth);
 	};
+
 	useEffect(() => {
-		const fetchToken = async () => {
-			if (user) {
-				const idToken = await user.getIdToken();
-				console.log(idToken)
-			}
-		};
-		fetchToken();
-	}, [user]);
+		const unsubscribe = onAuthStateChanged(auth, async (user) => {
+			if (!user) {
+				return router.push("/auth/signIn")
+			};
+			setUser(user);
+		});
+		return () => unsubscribe();
+	}, [router]);
 
 	return (
 		<div className="flex fixed w-full top-0 justify-between items-center px-6 py-3 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700/50 shadow-lg">
@@ -41,11 +42,13 @@ const LogOut = () => {
 						</svg>
 					</div>
 				</div>
-				
+
 				<div className="flex flex-col">
-					<span className="text-xs text-slate-400 font-medium">Welcome back</span>
+					<span className="text-xs text-slate-400 font-medium">
+						Welcome back
+					</span>
 					<span className="text-white font-semibold text-lg leading-tight">
-						{user?.displayName || 'Refresh to show username...'}
+						{user?.displayName || "Refresh to show username..."}
 					</span>
 				</div>
 			</div>
@@ -57,7 +60,7 @@ const LogOut = () => {
 			>
 				{/* Button shine effect */}
 				<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-				
+
 				{/* Button content */}
 				<div className="relative flex items-center gap-2">
 					<svg
