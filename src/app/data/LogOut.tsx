@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase/firebaseConfig";
 import useGetUserData from "./userData/useGetUserData";
@@ -10,6 +10,15 @@ const LogOut = () => {
 	const logOut = async () => {
 		await signOut(auth);
 	};
+	useEffect(() => {
+		const fetchToken = async () => {
+			if (user) {
+				const idToken = await user.getIdToken();
+				console.log(idToken)
+			}
+		};
+		fetchToken();
+	}, [user]);
 
 	return (
 		<div className="flex fixed w-full top-0 justify-between items-center px-6 py-3 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border-b border-slate-700/50 shadow-lg">

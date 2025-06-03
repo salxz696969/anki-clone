@@ -1,18 +1,64 @@
 "use client";
-import React, { useState } from "react";
-import useAnkiFunc from "./useAnkiFunc";
+import { auth } from "@/firebase/firebaseConfig";
+import axios from "axios";
+import { onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+
+type Doc = {
+	english: string;
+	kana: string;
+	kanji: string;
+	wordId: string;
+};
 
 const Ankifunctionality = () => {
+
+	
+	const [wordForToday, setWordForToday]=useState<Doc[]>([])
 	const [desiredAmount, setDesiredAmount] = useState(10);
 	const [inputAnswer, setInputAnswer] = useState("");
 	const [counter, setCounter] = useState(0);
-	const {
-		wordForToday,
-		removeWord,
-		dayRepetition,
-		studyAgainForThisSession,
-	} = useAnkiFunc(desiredAmount);
+	const [token, setToken]=useState("")
 	const [componentMode, setComponentMode] = useState("normal");
+	
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(auth, async(user) => {
+			if(!user) return
+			setToken(await user.getIdToken());
+		});
+		return () => unsubscribe();
+	}, []);
+
+	useEffect(()=>{
+		if (!token) return
+		const fetchData=async()=>{
+			const res=await axios.post("https://anki-clone-6kg4.vercel.app/api/studyLater", {
+				desiredAmount
+			}, {
+				headers:{
+					Authorization:`Bearer ${token}`
+				}
+			})
+			console.log(res.data)
+			setWordForToday(res.data.wordsForToday)
+		}
+		fetchData()
+	}, [token, desiredAmount])
+
+	const dayRepetition=async(id: string, difficulty:string)=>{
+		try {
+			await axios.patch("https://anki-clone-6kg4.vercel.app/api/studyLater", {
+				id: id,
+				difficulty: difficulty
+			}, {
+				headers: {
+					Authorization:`Bearer ${token}`
+				}
+			})
+		} catch (error) {
+			console.error(error)
+		}
+	}
 
 	const submit = () => {
 		if (!wordForToday) return;
@@ -75,25 +121,35 @@ const Ankifunctionality = () => {
 		</>
 	);
 
-	const dayRep = (difficulty: string) => {
+	const dayRep = async(difficulty: string) => {
 		setComponentMode("normal");
 		setInputAnswer("");
 		const wordId = wordForToday?.[counter].wordId;
 		if (wordId !== undefined) {
-			dayRepetition(wordId, difficulty);
+			await dayRepetition(wordId, difficulty);
 		}
 		if (!wordForToday) return;
 		if (counter === wordForToday?.length - 1) {
 			setCounter((counter) => counter - 1);
 		}
-		removeWord(counter);
+		removeWord();
 	};
+
+	const removeWord=()=>{
+		const tempWord=wordForToday.filter((_, index)=> index!==counter)
+		setWordForToday(tempWord)
+	}
 
 	const studyAgain = () => {
 		setComponentMode("normal");
 		setInputAnswer("");
-		studyAgainForThisSession(counter);
+		studyAgainForThisSession();
 	};
+
+	const studyAgainForThisSession=()=>{
+		const tempWord=wordForToday.filter((_, index)=> index!==counter)
+		setWordForToday([...tempWord, wordForToday[counter]])
+	}
 
 	const studyAgainComponent = () => (
 		<div className="flex flex-col gap-4">
@@ -144,6 +200,8 @@ const Ankifunctionality = () => {
 						<option value={10}>10 words</option>
 						<option value={15}>15 words</option>
 						<option value={20}>20 words</option>
+						<option value={25}>25 words</option>
+						<option value={30}>30 words</option>
 					</select>
 				</div>
 
