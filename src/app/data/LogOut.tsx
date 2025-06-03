@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 const LogOut = () => {
 	const [user, setUser] = useState<User>();
-	const router=useRouter()
+	const router = useRouter();
 	const logOut = async () => {
 		await signOut(auth);
 	};
@@ -14,8 +14,8 @@ const LogOut = () => {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, async (user) => {
 			if (!user) {
-				return router.push("/auth/signIn")
-			};
+				return router.push("/auth/signIn");
+			}
 			setUser(user);
 		});
 		return () => unsubscribe();
@@ -48,7 +48,15 @@ const LogOut = () => {
 						Welcome back
 					</span>
 					<span className="text-white font-semibold text-lg leading-tight">
-						{user?.displayName || "Refresh to show username..."}
+						{user?.displayName || (
+							<span className="inline-block">
+								<span className="inline-block w-1 h-1 mx-[1px] bg-white rounded-full animate-[fade_1s_ease-in-out_infinite]"></span>
+								<span className="inline-block w-1 h-1 mx-[1px] bg-white rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.2s]"></span>
+								<span className="inline-block w-1 h-1 mx-[1px] bg-white rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.4s]"></span>
+								<span className="inline-block w-1 h-1 mx-[1px] bg-white rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.6s]"></span>
+								<span className="inline-block w-1 h-1 mx-[1px] bg-white rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.8s]"></span>
+							</span>
+						)}
 					</span>
 				</div>
 			</div>
