@@ -12,53 +12,60 @@ type Doc = {
 };
 
 const Ankifunctionality = () => {
-
-	
-	const [wordForToday, setWordForToday]=useState<Doc[]>([])
+	const [wordForToday, setWordForToday] = useState<Doc[]>([]);
 	const [desiredAmount, setDesiredAmount] = useState(10);
 	const [inputAnswer, setInputAnswer] = useState("");
 	const [counter, setCounter] = useState(0);
-	const [token, setToken]=useState("")
+	const [token, setToken] = useState("");
 	const [componentMode, setComponentMode] = useState("normal");
-	
+	const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(auth, async(user) => {
-			if(!user) return
+		const unsubscribe = onAuthStateChanged(auth, async (user) => {
+			if (!user) return;
 			setToken(await user.getIdToken());
 		});
 		return () => unsubscribe();
 	}, []);
 
-	useEffect(()=>{
-		if (!token) return
-		const fetchData=async()=>{
-			const res=await axios.post("https://anki-clone-6kg4.vercel.app/api/studyLater", {
-				desiredAmount
-			}, {
-				headers:{
-					Authorization:`Bearer ${token}`
+	useEffect(() => {
+		if (!token) return;
+		const fetchData = async () => {
+			const res = await axios.post(
+				`${process.env.NEXT_PUBLIC_URL}/api/studyLater`,
+				{
+					desiredAmount,
+				},
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
 				}
-			})
-			console.log(res.data)
-			setWordForToday(res.data.wordsForToday)
-		}
-		fetchData()
-	}, [token, desiredAmount])
+			);
+			setWordForToday(res.data.wordsForToday);
+			setLoading(false);
+		};
+		fetchData();
+	}, [token, desiredAmount]);
 
-	const dayRepetition=async(id: string, difficulty:string)=>{
+	const dayRepetition = async (id: string, difficulty: string) => {
 		try {
-			await axios.patch("https://anki-clone-6kg4.vercel.app/api/studyLater", {
-				id: id,
-				difficulty: difficulty
-			}, {
-				headers: {
-					Authorization:`Bearer ${token}`
+			await axios.patch(
+				`${process.env.NEXT_PUBLIC_URL}/api/studyLater`,
+				{
+					id: id,
+					difficulty: difficulty,
+				},
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
 				}
-			})
+			);
 		} catch (error) {
-			console.error(error)
+			console.error(error);
 		}
-	}
+	};
 
 	const submit = () => {
 		if (!wordForToday) return;
@@ -121,12 +128,12 @@ const Ankifunctionality = () => {
 		</>
 	);
 
-	const dayRep = async(difficulty: string) => {
+	const dayRep = (difficulty: string) => {
 		setComponentMode("normal");
 		setInputAnswer("");
 		const wordId = wordForToday?.[counter].wordId;
 		if (wordId !== undefined) {
-			await dayRepetition(wordId, difficulty);
+			dayRepetition(wordId, difficulty);
 		}
 		if (!wordForToday) return;
 		if (counter === wordForToday?.length - 1) {
@@ -135,10 +142,10 @@ const Ankifunctionality = () => {
 		removeWord();
 	};
 
-	const removeWord=()=>{
-		const tempWord=wordForToday.filter((_, index)=> index!==counter)
-		setWordForToday(tempWord)
-	}
+	const removeWord = () => {
+		const tempWord = wordForToday.filter((_, index) => index !== counter);
+		setWordForToday(tempWord);
+	};
 
 	const studyAgain = () => {
 		setComponentMode("normal");
@@ -146,13 +153,16 @@ const Ankifunctionality = () => {
 		studyAgainForThisSession();
 	};
 
-	const studyAgainForThisSession=()=>{
-		const tempWord=wordForToday.filter((_, index)=> index!==counter)
-		setWordForToday([...tempWord, wordForToday[counter]])
-	}
+	const studyAgainForThisSession = () => {
+		const tempWord = wordForToday.filter((_, index) => index !== counter);
+		setWordForToday([...tempWord, wordForToday[counter]]);
+	};
 
 	const studyAgainComponent = () => (
 		<div className="flex flex-col gap-4">
+			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20">
+				{wordForToday?.[counter].english}
+			</div>
 			<div className="grid grid-cols-3 gap-3">
 				<button
 					className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold py-3 px-4 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
@@ -206,10 +216,20 @@ const Ankifunctionality = () => {
 				</div>
 
 				<div className="text-4xl text-center mb-8 text-slate-800 bg-white rounded-lg py-8 px-4 shadow-inner border-2 border-white/50 min-h-[120px] flex items-center justify-center">
-					{wordForToday?.[counter]?.kanji || (
-						<span className="text-slate-500 text-2xl">
-							No word available
+					{loading ? (
+						<span className="inline-block">
+							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite]"></span>
+							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.2s]"></span>
+							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.4s]"></span>
+							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.6s]"></span>
+							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.8s]"></span>
 						</span>
+					) : (
+						wordForToday?.[counter]?.kanji || (
+							<span className="text-slate-500 text-2xl">
+								No word available
+							</span>
+						)
 					)}
 				</div>
 
