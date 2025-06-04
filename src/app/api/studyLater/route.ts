@@ -68,22 +68,21 @@ const fetchWordIdAndDayIndicator = async (uid: string) => {
 const fetchWordList = async (data: UserDoc[], desiredAmount: number) => {
 	try {
 		const docsList = data
-			.map((item: UserDoc) => {
-				const today = new Date();
+		.map((item: UserDoc) => {
+			const today = new Date();
 				const studyLaterDate = item.studyLater.toDate();
 				if (
 					studyLaterDate.getFullYear() < today.getFullYear() ||
 					(studyLaterDate.getFullYear() === today.getFullYear() &&
-						(studyLaterDate.getMonth() < today.getMonth() ||
-							(studyLaterDate.getMonth() === today.getMonth() &&
+					(studyLaterDate.getMonth() < today.getMonth() ||
+					(studyLaterDate.getMonth() === today.getMonth() &&
 								studyLaterDate.getDate() <= today.getDate())))
-				) {
+							) {
 					return item.wordId;
 				}
 				return null;
 			})
 			.filter((id) => id !== null);
-		if (docsList.length === 0) return;
 		const wordsRef = adminDB.collection("n5-batch-1");
 		// if (docsList.length > 30) {
 		// 	const amount = docsList.slice(0, 30);
@@ -102,6 +101,7 @@ const fetchWordList = async (data: UserDoc[], desiredAmount: number) => {
 		// 	});
 		// 	return list;
 		// }
+		console.log(1)
 		if (docsList.length >= desiredAmount) {
 			const docsListSet = new Set(docsList);
 			const wordsQuery = wordsRef.limit(data.length);
