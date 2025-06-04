@@ -69,7 +69,10 @@ const Ankifunctionality = () => {
 
 	const submit = () => {
 		if (!wordForToday) return;
-		if (inputAnswer.replace(/\s+/g, '') === wordForToday[counter].kana.replace(/\s+/g, '')) {
+		if (
+			inputAnswer.replace(/\s+/g, "").normalize("NFKC") ===
+			wordForToday[counter].kana.replace(/\s+/g, "").normalize("NFKC")
+		) {
 			setComponentMode("studyAgain");
 		}
 	};
