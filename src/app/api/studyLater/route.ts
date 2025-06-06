@@ -41,7 +41,7 @@ export const POST = async (req: NextRequest) => {
 
 const fetchWordIdAndDayIndicator = async (uid: string) => {
 	try {
-		const userRef = adminDB.collection("users").doc(uid);
+		const userRef = adminDB.collection("users-just-in-case").doc(uid);
 		const userSnap = await userRef.get();
 		if (!userSnap.exists)
 			return NextResponse.json(
@@ -195,7 +195,7 @@ const updateDayRepetition = async (
 	id: string,
 	difficulty: string
 ) => {
-	const userRef = adminDB.collection("users").doc(uid);
+	const userRef = adminDB.collection("users-just-in-case").doc(uid);
 	const userSnap = await userRef.get();
 	if (!userSnap.exists) {
 		return;
