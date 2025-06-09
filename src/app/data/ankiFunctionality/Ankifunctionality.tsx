@@ -30,38 +30,81 @@ const Ankifunctionality = () => {
 
 	useEffect(() => {
 		if (!token) return;
-		const fetchData = async () => {
-			const res = await axios.post(
-				`${process.env.NEXT_PUBLIC_URL}/api/studyLater`,
-				{
-					desiredAmount,
-				},
-				{
-					headers: {
-						Authorization: `Bearer ${token}`,
-					},
-				}
+		const updatePastData = async () => {
+			const dataFromLocalStorage = localStorage.getItem(
+				"idAndDifficultyArray"
 			);
-			setWordForToday(res.data.wordsForToday);
-			setLoading(false);
+			if (dataFromLocalStorage) {
+				try {
+					await axios.patch(
+						`${process.env.NEXT_PUBLIC_URL}/api/day-repetition`,
+						{
+							idAndDifficulty: JSON.parse(dataFromLocalStorage),
+						},
+						{
+							headers: {
+								Authorization: `Bearer ${token}`,
+							},
+						}
+					);
+					localStorage.removeItem("idAndDifficultyArray");
+				} catch (error) {
+					console.error(error);
+				}
+			}
 		};
-		fetchData();
+		const fetchData = async () => {
+			try {
+				const res = await axios.post(
+					`${process.env.NEXT_PUBLIC_URL}/api/fetch-data`,
+					{
+						desiredAmount,
+					},
+					{
+						headers: {
+							Authorization: `Bearer ${token}`,
+						},
+					}
+				);
+				setWordForToday(res.data.wordsForToday);
+				setLoading(false);
+			} catch (error) {
+				console.error(error);
+			}
+		};
+
+		const run = async () => {
+			await updatePastData();
+			fetchData();
+		};
+		run();
 	}, [token, desiredAmount]);
 
-	const dayRepetition = async (id: string, difficulty: string) => {
+	const dayRepetition = (id: string, difficulty: string) => {
 		try {
-			await axios.patch(
-				`${process.env.NEXT_PUBLIC_URL}/api/studyLater`,
-				{
-					id: id,
-					difficulty: difficulty,
-				},
-				{
-					headers: {
-						Authorization: `Bearer ${token}`,
-					},
-				}
+			const checkLocalStorage = localStorage.getItem(
+				"idAndDifficultyArray"
 			);
+			const wordToAddToLocalStorage = {
+				id: id,
+				difficulty: difficulty,
+			};
+			if (
+				!checkLocalStorage?.includes(
+					JSON.stringify(wordToAddToLocalStorage)
+				)
+			) {
+				const updatedArray = checkLocalStorage
+					? [
+							...JSON.parse(checkLocalStorage),
+							wordToAddToLocalStorage,
+					  ]
+					: [wordToAddToLocalStorage];
+				localStorage.setItem(
+					"idAndDifficultyArray",
+					JSON.stringify(updatedArray)
+				);
+			}
 		} catch (error) {
 			console.error(error);
 		}
