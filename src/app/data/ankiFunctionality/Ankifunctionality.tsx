@@ -19,6 +19,7 @@ const Ankifunctionality = () => {
 	const [token, setToken] = useState("");
 	const [componentMode, setComponentMode] = useState("normal");
 	const [loading, setLoading] = useState(true);
+	const [isFetched, setIsFetched] = useState(true);
 
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -54,6 +55,7 @@ const Ankifunctionality = () => {
 			}
 		};
 		const fetchData = async () => {
+			setIsFetched(true);
 			try {
 				const res = await axios.post(
 					`${process.env.NEXT_PUBLIC_URL}/api/fetch-data`,
@@ -67,9 +69,11 @@ const Ankifunctionality = () => {
 					}
 				);
 				setWordForToday(res.data.wordsForToday);
-				setLoading(false);
 			} catch (error) {
 				console.error(error);
+			} finally {
+				setLoading(false);
+				setIsFetched(false);
 			}
 		};
 
@@ -123,6 +127,7 @@ const Ankifunctionality = () => {
 	const normalComponent = () => (
 		<>
 			<input
+				disabled={isFetched}
 				type="text"
 				className="w-full mb-6 px-4 py-3 border-2 border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/40 text-white bg-slate-700 placeholder-slate-300 text-lg transition-all duration-200"
 				placeholder="Type your answer here..."
@@ -131,12 +136,14 @@ const Ankifunctionality = () => {
 			/>
 			<div className="flex gap-3">
 				<button
+					disabled={isFetched}
 					className="flex-1 bg-slate-600 hover:bg-slate-700 active:bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/20 hover:border-white/40 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
 					onClick={() => setComponentMode("skip")}
 				>
 					Skip
 				</button>
 				<button
+					disabled={isFetched}
 					className="flex-1 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
 					onClick={submit}
 				>
