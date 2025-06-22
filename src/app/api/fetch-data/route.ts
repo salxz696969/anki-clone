@@ -2,7 +2,6 @@ import { adminAuth, adminDB } from "@/firebase/firebaseAdmin";
 import { FieldPath } from "firebase-admin/firestore";
 import { NextRequest, NextResponse } from "next/server";
 
-
 type Words = {
 	english: string;
 	kana: string;
@@ -30,11 +29,16 @@ export const POST = async (req: NextRequest) => {
 	const userLearntWordIds = userLearntWordsAndCount.userLearntIds;
 
 	const count = userLearntWordsAndCount.count;
-	if (userLearntWordIds.length > desiredAmount) {
+	if (userLearntWordIds.length >= desiredAmount) {
 		return NextResponse.json({
 			wordsForToday: await fetchLearntWords(
 				userLearntWordIds.slice(0, desiredAmount)
 			),
+		});
+	}
+	if (userLearntWordIds.length === 0) {
+		return NextResponse.json({
+			wordsForToday: await fetchExcessWords(count, desiredAmount, uid),
 		});
 	}
 	if (userLearntWordIds.length < desiredAmount) {
@@ -44,14 +48,8 @@ export const POST = async (req: NextRequest) => {
 			desiredAmount - userLearntWordIds.length,
 			uid
 		);
-		console.log(learntWords.length || 0, excessWords.length || 0);
 		return NextResponse.json({
 			wordsForToday: [...learntWords, ...excessWords],
-		});
-	}
-	if (userLearntWordIds.length === 0) {
-		return NextResponse.json({
-			wordsForToday: await fetchExcessWords(count, desiredAmount, uid),
 		});
 	}
 };
@@ -70,6 +68,13 @@ const fetchUserInfo = async (
 		const countSnapshot = await userRef.count().get();
 		const count = countSnapshot.data().count || 0;
 		const userLearntIds = userSnapshot.docs.map((doc) => doc.id);
+		// console.log(
+		// 	JSON.stringify(
+		// 		userLearntIds.map((id) => ({ id, difficulty: "easy" })),
+		// 		null,
+		// 		1
+		// 	)
+		// );
 		return { userLearntIds, count };
 	} catch (error) {
 		throw error;
@@ -97,6 +102,7 @@ const fetchLearntWords = async (
 			kanji: doc.data().kanji,
 		}));
 		return wordsForToday;
+		return []
 	} catch (error) {
 		console.error(error);
 		return [];
@@ -124,17 +130,18 @@ const fetchExcessWords = async (
 				.collection("users")
 				.doc(uid)
 				.collection("learntWords");
-			excessWords.forEach((word) => {
+			const appendWord = excessWords.slice(count, excessWords.length);
+			appendWord.forEach((word) => {
 				const wordRef = writeToUserRef.doc(word.wordId);
 				batch.set(wordRef, {
 					dayIndicator: 0,
 					studyLater: new Date(),
-				});
+				}, { merge: true });
 			});
 
 			await batch.commit();
 		}
-		return excessWords.slice(count, amountToSlice);
+		return excessWords.slice(count, excessWords.length);
 	} catch (error) {
 		console.error(error);
 		return [];

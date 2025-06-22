@@ -48,6 +48,10 @@ const batchUpdate = async (
 			.collection("learntWords")
 			.doc(idAndDifficulty.id);
 		const snap = await ref.get();
+		if (!snap.exists) {
+			console.error(`Document not found for id: ${idAndDifficulty.id}`);
+			continue; // Skip if document doesn't exist
+		}
 		const data = snap.data() as UserDoc;
 		if (data.dayIndicator === 0) {
 			const today = new Date();
