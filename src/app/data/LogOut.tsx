@@ -16,7 +16,7 @@ const LogOut = () => {
 			if (!user) {
 				return router.push("/auth/signIn");
 			}
-			console.log(await user.getIdToken())
+			// console.log(await user.getIdToken())
 			setUser(user);
 		});
 		return () => unsubscribe();
