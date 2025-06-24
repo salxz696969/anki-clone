@@ -41,6 +41,7 @@ const batchUpdate = async (
 	idAndDifficultyArr: IdAndDifficulty[]
 ) => {
 	const batch = adminDB.batch();
+	// console.log(idAndDifficultyArr)
 	for (const idAndDifficulty of idAndDifficultyArr) {
 		const ref = adminDB
 			.collection("users")
@@ -54,7 +55,7 @@ const batchUpdate = async (
 		}
 		const data = snap.data() as UserDoc;
 		if (data.dayIndicator === 0) {
-			const today = new Date();
+			const today = new Date();	
 			const tomorrow = new Date(today);
 			tomorrow.setDate(tomorrow.getDate() + 1);
 			batch.update(ref, {

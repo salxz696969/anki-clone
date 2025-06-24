@@ -25,6 +25,7 @@ const Ankifunctionality = () => {
 		const unsubscribe = onAuthStateChanged(auth, async (user) => {
 			if (!user) return;
 			setToken(await user.getIdToken());
+			// console.log(await user.getIdToken());
 		});
 		return () => unsubscribe();
 	}, []);
@@ -124,11 +125,11 @@ const Ankifunctionality = () => {
 		}
 	};
 
-	const isDisabled=()=>{
-		if(wordForToday.length === 0 || loading || isFetched) {
+	const isDisabled = () => {
+		if (wordForToday.length === 0 || loading || isFetched) {
 			return true;
 		}
-	}
+	};
 
 	const normalComponent = () => (
 		<>
@@ -138,6 +139,11 @@ const Ankifunctionality = () => {
 				className="w-full mb-6 px-4 py-3 border-2 border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/40 text-white bg-slate-700 placeholder-slate-300 text-lg transition-all duration-200"
 				placeholder="Type your answer here..."
 				value={inputAnswer}
+				onKeyDown={(e) => {
+					if (e.key === "Enter") {
+						submit();
+					}
+				}}
 				onChange={(e) => setInputAnswer(String(e.target.value))}
 			/>
 			<div className="flex gap-3">
@@ -218,7 +224,7 @@ const Ankifunctionality = () => {
 	};
 
 	const studyAgainComponent = () => (
-		<div className="flex flex-col gap-4">
+		<form className="flex flex-col gap-4">
 			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20">
 				{wordForToday?.[counter].english}
 			</div>
@@ -248,11 +254,22 @@ const Ankifunctionality = () => {
 			>
 				Study Again
 			</button>
-		</div>
+		</form>
 	);
 
 	return (
-		<div className="flex flex-col items-center justify-center min-h-screen bg-slate-900 p-4">
+		<div
+			className="flex flex-col items-center justify-center min-h-screen bg-slate-900 p-4"
+			onKeyDown={(e) => {
+				if (e.key === "1") {
+					dayRep("easy");
+				} else if (e.key === "2") {
+					dayRep("medium");
+				} else if (e.key === "3") {
+					dayRep("hard");
+				}
+			}}
+		>
 			<div className="bg-slate-800 shadow-2xl rounded-lg p-8 w-full max-w-lg border border-slate-600">
 				<div className="mb-8">
 					<label className="block text-white font-medium mb-2">
