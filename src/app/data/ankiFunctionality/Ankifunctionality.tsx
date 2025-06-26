@@ -13,7 +13,7 @@ type Doc = {
 
 const Ankifunctionality = () => {
 	const [wordForToday, setWordForToday] = useState<Doc[]>([]);
-	const [desiredAmount, setDesiredAmount] = useState(10);
+	const [desiredAmount, setDesiredAmount] = useState(30);
 	const [inputAnswer, setInputAnswer] = useState("");
 	const [counter, setCounter] = useState(0);
 	const [token, setToken] = useState("");
