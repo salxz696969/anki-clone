@@ -1,0 +1,2402 @@
+[
+	{
+		"kanji": "動物",
+		"sentence": "動物が好きです。",
+		"translation": "I like animals."
+	},
+	{
+		"kanji": "散歩",
+		"sentence": "毎朝、散歩します。",
+		"translation": "I take a walk every morning."
+	},
+	{
+		"kanji": "本棚",
+		"sentence": "本棚に本があります。",
+		"translation": "There are books on the bookshelf."
+	},
+	{
+		"kanji": "体",
+		"sentence": "体が大きいです。",
+		"translation": "The body is big."
+	},
+	{
+		"kanji": "～など",
+		"sentence": "りんごやバナナなどを食べます。",
+		"translation": "I eat apples, bananas, and so on."
+	},
+	{
+		"kanji": "自転車",
+		"sentence": "自転車で学校へ行きます。",
+		"translation": "I go to school by bicycle."
+	},
+	{
+		"kanji": "冬",
+		"sentence": "冬は寒いです。",
+		"translation": "Winter is cold."
+	},
+	{
+		"kanji": "二つ",
+		"sentence": "りんごを二つ買いました。",
+		"translation": "I bought two apples."
+	},
+	{
+		"kanji": "昼",
+		"sentence": "昼にご飯を食べます。",
+		"translation": "I eat lunch at noon."
+	},
+	{
+		"kanji": "飲み物",
+		"sentence": "飲み物をください。",
+		"translation": "Please give me a drink."
+	},
+	{
+		"kanji": "温い",
+		"sentence": "このお湯は温いです。",
+		"translation": "This hot water is lukewarm."
+	},
+	{
+		"kanji": "登る",
+		"sentence": "山に登ります。",
+		"translation": "I climb a mountain."
+	},
+	{
+		"kanji": "一緒",
+		"sentence": "友達と一緒に行きます。",
+		"translation": "I go with my friend."
+	},
+	{
+		"kanji": "大変",
+		"sentence": "宿題が大変です。",
+		"translation": "The homework is tough."
+	},
+	{
+		"kanji": "教室",
+		"sentence": "教室に先生がいます。",
+		"translation": "There is a teacher in the classroom."
+	},
+	{
+		"kanji": "新しい",
+		"sentence": "新しい車を買いました。",
+		"translation": "I bought a new car."
+	},
+	{
+		"kanji": "低い",
+		"sentence": "この椅子は低いです。",
+		"translation": "This chair is low."
+	},
+	{
+		"kanji": "八つ",
+		"sentence": "りんごが八つあります。",
+		"translation": "There are eight apples."
+	},
+	{
+		"kanji": "去年",
+		"sentence": "去年、日本に行きました。",
+		"translation": "I went to Japan last year."
+	},
+	{
+		"kanji": "日曜日",
+		"sentence": "日曜日は休みです。",
+		"translation": "Sunday is a day off."
+	},
+	{
+		"kanji": "五",
+		"sentence": "五人の学生がいます。",
+		"translation": "There are five students."
+	},
+	{
+		"kanji": "休み",
+		"sentence": "今日は休みです。",
+		"translation": "Today is a holiday."
+	},
+	{
+		"kanji": "金曜日",
+		"sentence": "金曜日に映画を見ます。",
+		"translation": "I watch a movie on Friday."
+	},
+	{
+		"kanji": "絵",
+		"sentence": "きれいな絵ですね。",
+		"translation": "That’s a beautiful painting."
+	},
+	{
+		"kanji": "勤める",
+		"sentence": "会社に勤めています。",
+		"translation": "I work at a company."
+	},
+	{
+		"kanji": "昼御飯",
+		"sentence": "昼御飯を食べました。",
+		"translation": "I ate lunch."
+	},
+	{
+		"kanji": "～時",
+		"sentence": "三時に会いましょう。",
+		"translation": "Let's meet at 3 o'clock."
+	},
+	{
+		"kanji": "交差点",
+		"sentence": "交差点を渡ります。",
+		"translation": "I cross the intersection."
+	},
+	{
+		"kanji": "毎朝",
+		"sentence": "毎朝ジョギングします。",
+		"translation": "I jog every morning."
+	},
+	{
+		"kanji": "三日",
+		"sentence": "三日間旅行します。",
+		"translation": "I will travel for three days."
+	},
+	{
+		"kanji": "使う",
+		"sentence": "このペンを使います。",
+		"translation": "I use this pen."
+	},
+	{
+		"kanji": "後",
+		"sentence": "昼御飯の後、寝ました。",
+		"translation": "I slept after lunch."
+	},
+	{
+		"kanji": "何～",
+		"sentence": "何人いますか。",
+		"translation": "How many people are there?"
+	},
+	{
+		"kanji": "汚い",
+		"sentence": "部屋が汚いです。",
+		"translation": "The room is dirty."
+	},
+	{
+		"kanji": "午後",
+		"sentence": "午後に会いましょう。",
+		"translation": "Let's meet in the afternoon."
+	},
+	{
+		"kanji": "六日",
+		"sentence": "六日に帰ります。",
+		"translation": "I will return on the sixth."
+	},
+	{
+		"kanji": "病院",
+		"sentence": "病院へ行きます。",
+		"translation": "I go to the hospital."
+	},
+	{
+		"kanji": "木曜日",
+		"sentence": "木曜日はテストがあります。",
+		"translation": "There is a test on Thursday."
+	},
+	{
+		"kanji": "座る",
+		"sentence": "椅子に座ってください。",
+		"translation": "Please sit on the chair."
+	},
+	{
+		"kanji": "お酒",
+		"sentence": "お酒を飲みますか。",
+		"translation": "Do you drink alcohol?"
+	},
+	{
+		"kanji": "立つ",
+		"sentence": "立ってください。",
+		"translation": "Please stand."
+	},
+	{
+		"kanji": "歯",
+		"sentence": "歯を磨きます。",
+		"translation": "I brush my teeth."
+	},
+	{
+		"kanji": "傘",
+		"sentence": "傘を忘れました。",
+		"translation": "I forgot my umbrella."
+	},
+	{
+		"kanji": "二十歳",
+		"sentence": "彼は二十歳です。",
+		"translation": "He is 20 years old."
+	},
+	{
+		"kanji": "行く",
+		"sentence": "学校へ行きます。",
+		"translation": "I go to school."
+	},
+	{
+		"kanji": "持つ",
+		"sentence": "かばんを持っています。",
+		"translation": "I have a bag."
+	},
+	{
+		"kanji": "妹",
+		"sentence": "妹は学生です。",
+		"translation": "My younger sister is a student."
+	},
+	{
+		"kanji": "曲る",
+		"sentence": "右に曲がってください。",
+		"translation": "Please turn right."
+	},
+	{
+		"kanji": "冷蔵庫",
+		"sentence": "冷蔵庫に牛乳があります。",
+		"translation": "There is milk in the fridge."
+	},
+	{
+		"kanji": "綺麗",
+		"sentence": "この部屋は綺麗です。",
+		"translation": "This room is clean."
+	},
+	{
+		"kanji": "軽い",
+		"sentence": "このかばんは軽いです。",
+		"translation": "This bag is light."
+	},
+	{
+		"kanji": "質問",
+		"sentence": "質問がありますか。",
+		"translation": "Do you have a question?"
+	},
+	{
+		"kanji": "白い",
+		"sentence": "白いシャツを着ます。",
+		"translation": "I wear a white shirt."
+	},
+	{
+		"kanji": "黄色",
+		"sentence": "黄色の花が咲いています。",
+		"translation": "Yellow flowers are blooming."
+	},
+	{
+		"kanji": "字引",
+		"sentence": "字引で調べます。",
+		"translation": "I look it up in the dictionary."
+	},
+	{
+		"kanji": "無くす",
+		"sentence": "鍵を無くしました。",
+		"translation": "I lost my key."
+	},
+	{
+		"kanji": "水",
+		"sentence": "水を飲みます。",
+		"translation": "I drink water."
+	},
+	{
+		"kanji": "牛肉",
+		"sentence": "牛肉が好きです。",
+		"translation": "I like beef."
+	},
+	{
+		"kanji": "青い",
+		"sentence": "青い空がきれいです。",
+		"translation": "The blue sky is beautiful."
+	},
+	{
+		"kanji": "白",
+		"sentence": "白が好きです。",
+		"translation": "I like white."
+	},
+	{
+		"kanji": "渡る",
+		"sentence": "橋を渡ります。",
+		"translation": "I cross the bridge."
+	},
+	{
+		"kanji": "近く",
+		"sentence": "駅の近くに住んでいます。",
+		"translation": "I live near the station."
+	},
+	{
+		"kanji": "右",
+		"sentence": "右を見てください。",
+		"translation": "Please look right."
+	},
+	{
+		"kanji": "六つ",
+		"sentence": "六つのケーキがあります。",
+		"translation": "There are six cakes."
+	},
+	{
+		"kanji": "～枚",
+		"sentence": "紙を三枚ください。",
+		"translation": "Please give me three sheets of paper."
+	},
+	{
+		"kanji": "～前",
+		"sentence": "五分前に来ました。",
+		"translation": "I came five minutes earlier."
+	},
+	{
+		"kanji": "一昨日",
+		"sentence": "一昨日は雨でした。",
+		"translation": "It rained the day before yesterday."
+	},
+	{
+		"kanji": "背広",
+		"sentence": "父は背広を着ています。",
+		"translation": "My father is wearing a suit."
+	},
+	{
+		"kanji": "覚える",
+		"sentence": "単語を覚えます。",
+		"translation": "I memorize words."
+	},
+	{
+		"kanji": "近い",
+		"sentence": "駅は近いです。",
+		"translation": "The station is close."
+	},
+	{
+		"kanji": "上着",
+		"sentence": "上着を着てください。",
+		"translation": "Please put on your jacket."
+	},
+	{
+		"kanji": "下手",
+		"sentence": "私は歌が下手です。",
+		"translation": "I am bad at singing."
+	},
+	{
+		"kanji": "夕飯",
+		"sentence": "夕飯を作ります。",
+		"translation": "I cook dinner."
+	},
+	{
+		"kanji": "時間",
+		"sentence": "時間がありますか。",
+		"translation": "Do you have time?"
+	},
+	{
+		"kanji": "会う",
+		"sentence": "友達に会います。",
+		"translation": "I meet a friend."
+	},
+	{
+		"kanji": "欲しい",
+		"sentence": "新しい時計が欲しいです。",
+		"translation": "I want a new watch."
+	},
+	{
+		"kanji": "弾く",
+		"sentence": "ピアノを弾きます。",
+		"translation": "I play the piano."
+	},
+	{
+		"kanji": "地下鉄",
+		"sentence": "地下鉄に乗ります。",
+		"translation": "I ride the subway."
+	},
+	{
+		"kanji": "財布",
+		"sentence": "財布を忘れました。",
+		"translation": "I forgot my wallet."
+	},
+	{
+		"kanji": "美味しい",
+		"sentence": "このケーキは美味しいです。",
+		"translation": "This cake is delicious."
+	},
+	{
+		"kanji": "一番",
+		"sentence": "彼が一番です。",
+		"translation": "He is the best."
+	},
+	{
+		"kanji": "眼鏡",
+		"sentence": "眼鏡をかけています。",
+		"translation": "I wear glasses."
+	},
+	{
+		"kanji": "～時間",
+		"sentence": "二時間かかります。",
+		"translation": "It takes two hours."
+	},
+	{
+		"kanji": "飛ぶ",
+		"sentence": "鳥が飛びます。",
+		"translation": "The bird flies."
+	},
+	{
+		"kanji": "声",
+		"sentence": "大きい声で話してください。",
+		"translation": "Please speak loudly."
+	},
+	{
+		"kanji": "遅い",
+		"sentence": "彼は遅いです。",
+		"translation": "He is slow."
+	},
+	{
+		"kanji": "並ぶ",
+		"sentence": "店に人が並んでいます。",
+		"translation": "People are lining up at the store."
+	},
+	{
+		"kanji": "暑い",
+		"sentence": "今日はとても暑いです。",
+		"translation": "It is very hot today."
+	},
+	{
+		"kanji": "会社",
+		"sentence": "兄は会社で働いています。",
+		"translation": "My older brother works at a company."
+	},
+	{
+		"kanji": "池",
+		"sentence": "池に魚がいます。",
+		"translation": "There are fish in the pond."
+	},
+	{
+		"kanji": "色",
+		"sentence": "好きな色は青です。",
+		"translation": "My favorite color is blue."
+	},
+	{
+		"kanji": "今朝",
+		"sentence": "今朝は早く起きました。",
+		"translation": "I woke up early this morning."
+	},
+	{
+		"kanji": "五日",
+		"sentence": "五日に行きます。",
+		"translation": "I will go on the fifth."
+	},
+	{
+		"kanji": "始まる",
+		"sentence": "授業が始まります。",
+		"translation": "The class starts."
+	},
+	{
+		"kanji": "鍵",
+		"sentence": "鍵をなくしました。",
+		"translation": "I lost the key."
+	},
+	{
+		"kanji": "秋",
+		"sentence": "秋は涼しいです。",
+		"translation": "Autumn is cool."
+	},
+	{
+		"kanji": "横",
+		"sentence": "横になってください。",
+		"translation": "Please lie down."
+	},
+	{
+		"kanji": "～中",
+		"sentence": "昼食中です。",
+		"translation": "I am having lunch."
+	},
+	{
+		"kanji": "終る",
+		"sentence": "映画が終わりました。",
+		"translation": "The movie ended."
+	},
+	{
+		"kanji": "太い",
+		"sentence": "この本は太いです。",
+		"translation": "This book is thick."
+	},
+	{
+		"kanji": "葉書",
+		"sentence": "葉書を出しました。",
+		"translation": "I sent a postcard."
+	},
+	{
+		"kanji": "男の子",
+		"sentence": "あの男の子は元気です。",
+		"translation": "That boy is energetic."
+	},
+	{
+		"kanji": "母",
+		"sentence": "母は料理が上手です。",
+		"translation": "My mother is good at cooking."
+	},
+	{
+		"kanji": "晴れる",
+		"sentence": "明日は晴れます。",
+		"translation": "It will be sunny tomorrow."
+	},
+	{
+		"kanji": "涼しい",
+		"sentence": "今日は涼しいです。",
+		"translation": "It is cool today."
+	},
+	{
+		"kanji": "買う",
+		"sentence": "りんごを買いました。",
+		"translation": "I bought an apple."
+	},
+	{
+		"kanji": "忙しい",
+		"sentence": "今日は忙しいです。",
+		"translation": "I am busy today."
+	},
+	{
+		"kanji": "遊ぶ",
+		"sentence": "公園で遊びます。",
+		"translation": "I play in the park."
+	},
+	{
+		"kanji": "黒い",
+		"sentence": "黒い靴を履いています。",
+		"translation": "I am wearing black shoes."
+	},
+	{
+		"kanji": "女",
+		"sentence": "女の人が話しています。",
+		"translation": "A woman is speaking."
+	},
+	{
+		"kanji": "多分",
+		"sentence": "多分行きます。",
+		"translation": "Maybe I will go."
+	},
+	{
+		"kanji": "～さん",
+		"sentence": "田中さんは先生です。",
+		"translation": "Mr. Tanaka is a teacher."
+	},
+	{
+		"kanji": "作文",
+		"sentence": "作文を書きました。",
+		"translation": "I wrote a composition."
+	},
+	{
+		"kanji": "大学",
+		"sentence": "大学に通っています。",
+		"translation": "I go to university."
+	},
+	{
+		"kanji": "小さな",
+		"sentence": "小さな猫がいます。",
+		"translation": "There is a small cat."
+	},
+	{
+		"kanji": "～回",
+		"sentence": "三回行きました。",
+		"translation": "I went three times."
+	},
+	{
+		"kanji": "口",
+		"sentence": "口を開けてください。",
+		"translation": "Please open your mouth."
+	},
+	{
+		"kanji": "～だけ",
+		"sentence": "一人だけ来ました。",
+		"translation": "Only one person came."
+	},
+	{
+		"kanji": "お菓子",
+		"sentence": "お菓子を食べました。",
+		"translation": "I ate sweets."
+	},
+	{
+		"kanji": "切符",
+		"sentence": "切符を買いました。",
+		"translation": "I bought a ticket."
+	},
+	{
+		"kanji": "箸",
+		"sentence": "箸で食べます。",
+		"translation": "I eat with chopsticks."
+	},
+	{
+		"kanji": "休む",
+		"sentence": "今日は会社を休みます。",
+		"translation": "I will take a day off from work today."
+	},
+	{
+		"kanji": "結構",
+		"sentence": "結構です。",
+		"translation": "That's fine."
+	},
+	{
+		"kanji": "喫茶店",
+		"sentence": "喫茶店でコーヒーを飲みます。",
+		"translation": "I drink coffee at a café."
+	},
+	{
+		"kanji": "～度",
+		"sentence": "一度行きました。",
+		"translation": "I went once."
+	},
+	{
+		"kanji": "置く",
+		"sentence": "机に本を置きます。",
+		"translation": "I put the book on the desk."
+	},
+	{
+		"kanji": "雨",
+		"sentence": "雨が降っています。",
+		"translation": "It is raining."
+	},
+	{
+		"kanji": "今週",
+		"sentence": "今週は忙しいです。",
+		"translation": "I am busy this week."
+	},
+	{
+		"kanji": "お腹",
+		"sentence": "お腹がすきました。",
+		"translation": "I am hungry."
+	},
+	{
+		"kanji": "働く",
+		"sentence": "レストランで働いています。",
+		"translation": "I work at a restaurant."
+	},
+	{
+		"kanji": "暇",
+		"sentence": "今日は暇です。",
+		"translation": "I am free today."
+	},
+	{
+		"kanji": "細い",
+		"sentence": "細い道を歩きます。",
+		"translation": "I walk on a narrow path."
+	},
+	{
+		"kanji": "狭い",
+		"sentence": "この部屋は狭いです。",
+		"translation": "This room is narrow."
+	},
+	{
+		"kanji": "乗る",
+		"sentence": "バスに乗ります。",
+		"translation": "I ride the bus."
+	},
+	{
+		"kanji": "姉",
+		"sentence": "姉は医者です。",
+		"translation": "My older sister is a doctor."
+	},
+	{
+		"kanji": "大きい",
+		"sentence": "大きい家に住んでいます。",
+		"translation": "I live in a big house."
+	},
+	{
+		"kanji": "月曜日",
+		"sentence": "月曜日にテストがあります。",
+		"translation": "There is a test on Monday."
+	},
+	{
+		"kanji": "花瓶",
+		"sentence": "花瓶にバラをさしました。",
+		"translation": "I put a rose in the vase."
+	},
+	{
+		"kanji": "～ずつ",
+		"sentence": "りんごを一つずつください。",
+		"translation": "Please give me one apple each."
+	},
+	{
+		"kanji": "難しい",
+		"sentence": "この問題は難しいです。",
+		"translation": "This problem is difficult."
+	},
+	{
+		"kanji": "一月",
+		"sentence": "一月は寒いです。",
+		"translation": "January is cold."
+	},
+	{
+		"kanji": "自分",
+		"sentence": "自分で作りました。",
+		"translation": "I made it myself."
+	},
+	{
+		"kanji": "自動車",
+		"sentence": "自動車を運転します。",
+		"translation": "I drive a car."
+	},
+	{
+		"kanji": "五つ",
+		"sentence": "みかんを五つ食べました。",
+		"translation": "I ate five mandarins."
+	},
+	{
+		"kanji": "向こう",
+		"sentence": "向こうに行きましょう。",
+		"translation": "Let's go over there."
+	},
+	{
+		"kanji": "～屋",
+		"sentence": "パン屋でパンを買いました。",
+		"translation": "I bought bread at the bakery."
+	},
+	{
+		"kanji": "漢字",
+		"sentence": "漢字を勉強しています。",
+		"translation": "I am studying kanji."
+	},
+	{
+		"kanji": "万",
+		"sentence": "一万円を使いました。",
+		"translation": "I spent ten thousand yen."
+	},
+	{
+		"kanji": "～すぎ",
+		"sentence": "食べすぎてしまいました。",
+		"translation": "I ate too much."
+	},
+	{
+		"kanji": "何",
+		"sentence": "何をしていますか？",
+		"translation": "What are you doing?"
+	},
+	{
+		"kanji": "犬",
+		"sentence": "犬が走っています。",
+		"translation": "The dog is running."
+	},
+	{
+		"kanji": "医者",
+		"sentence": "医者に行きました。",
+		"translation": "I went to the doctor."
+	},
+	{
+		"kanji": "茶色",
+		"sentence": "茶色のかばんを持っています。",
+		"translation": "I have a brown bag."
+	},
+	{
+		"kanji": "止まる",
+		"sentence": "バスが止まりました。",
+		"translation": "The bus stopped."
+	},
+	{
+		"kanji": "鉛筆",
+		"sentence": "鉛筆で書いてください。",
+		"translation": "Please write with a pencil."
+	},
+	{
+		"kanji": "先生",
+		"sentence": "先生に質問しました。",
+		"translation": "I asked the teacher a question."
+	},
+	{
+		"kanji": "隣",
+		"sentence": "隣の部屋がうるさいです。",
+		"translation": "The room next door is noisy."
+	},
+	{
+		"kanji": "降る",
+		"sentence": "雨が降っています。",
+		"translation": "It is raining."
+	},
+	{
+		"kanji": "夜",
+		"sentence": "夜に映画を見ました。",
+		"translation": "I watched a movie at night."
+	},
+	{
+		"kanji": "警官",
+		"sentence": "警官が道を教えてくれました。",
+		"translation": "The police officer gave me directions."
+	},
+	{
+		"kanji": "服",
+		"sentence": "新しい服を買いました。",
+		"translation": "I bought new clothes."
+	},
+	{
+		"kanji": "英語",
+		"sentence": "英語を話せますか？",
+		"translation": "Can you speak English?"
+	},
+	{
+		"kanji": "一",
+		"sentence": "一つだけください。",
+		"translation": "Just give me one, please."
+	},
+	{
+		"kanji": "消える",
+		"sentence": "電気が消えました。",
+		"translation": "The light went out."
+	},
+	{
+		"kanji": "上げる",
+		"sentence": "手を上げてください。",
+		"translation": "Please raise your hand."
+	},
+	{
+		"kanji": "外",
+		"sentence": "外で遊びましょう。",
+		"translation": "Let's play outside."
+	},
+	{
+		"kanji": "嫌い",
+		"sentence": "にんじんが嫌いです。",
+		"translation": "I dislike carrots."
+	},
+	{
+		"kanji": "音楽",
+		"sentence": "音楽を聞きます。",
+		"translation": "I listen to music."
+	},
+	{
+		"kanji": "貼る",
+		"sentence": "紙を壁に貼りました。",
+		"translation": "I stuck the paper on the wall."
+	},
+	{
+		"kanji": "曇り",
+		"sentence": "今日は曇りです。",
+		"translation": "It's cloudy today."
+	},
+	{
+		"kanji": "明るい",
+		"sentence": "部屋が明るいです。",
+		"translation": "The room is bright."
+	},
+	{
+		"kanji": "猫",
+		"sentence": "猫が寝ています。",
+		"translation": "The cat is sleeping."
+	},
+	{
+		"kanji": "文章",
+		"sentence": "日本語で文章を書きました。",
+		"translation": "I wrote a sentence in Japanese."
+	},
+	{
+		"kanji": "二",
+		"sentence": "りんごを二つください。",
+		"translation": "Please give me two apples."
+	},
+	{
+		"kanji": "次",
+		"sentence": "次の電車は十時です。",
+		"translation": "The next train is at 10 o'clock."
+	},
+	{
+		"kanji": "方",
+		"sentence": "あの方は先生です。",
+		"translation": "That person is a teacher."
+	},
+	{
+		"kanji": "三",
+		"sentence": "三人で行きました。",
+		"translation": "We went as three people."
+	},
+	{
+		"kanji": "六",
+		"sentence": "六時に起きます。",
+		"translation": "I wake up at six."
+	},
+	{
+		"kanji": "皆さん",
+		"sentence": "皆さん、こんにちは。",
+		"translation": "Hello everyone."
+	},
+	{
+		"kanji": "奥さん",
+		"sentence": "あの人は田中さんの奥さんです。",
+		"translation": "That person is Mr. Tanaka's wife."
+	},
+	{
+		"kanji": "肉",
+		"sentence": "肉を焼きます。",
+		"translation": "I grill meat."
+	},
+	{
+		"kanji": "兄",
+		"sentence": "兄は高校生です。",
+		"translation": "My older brother is a high school student."
+	},
+	{
+		"kanji": "朝御飯",
+		"sentence": "朝御飯を食べましたか？",
+		"translation": "Did you eat breakfast?"
+	},
+	{
+		"kanji": "住む",
+		"sentence": "東京に住んでいます。",
+		"translation": "I live in Tokyo."
+	},
+	{
+		"kanji": "お兄さん",
+		"sentence": "お兄さんはどこですか？",
+		"translation": "Where is your older brother?"
+	},
+	{
+		"kanji": "果物",
+		"sentence": "果物が好きです。",
+		"translation": "I like fruit."
+	},
+	{
+		"kanji": "北",
+		"sentence": "北に向かいます。",
+		"translation": "I head north."
+	},
+	{
+		"kanji": "東",
+		"sentence": "東の空が明るいです。",
+		"translation": "The eastern sky is bright."
+	},
+	{
+		"kanji": "下さい",
+		"sentence": "水を下さい。",
+		"translation": "Please give me water."
+	},
+	{
+		"kanji": "少し",
+		"sentence": "少し疲れました。",
+		"translation": "I'm a little tired."
+	},
+	{
+		"kanji": "山",
+		"sentence": "山に登ります。",
+		"translation": "I climb the mountain."
+	},
+	{
+		"kanji": "～本",
+		"sentence": "ペンを二本買いました。",
+		"translation": "I bought two pens."
+	},
+	{
+		"kanji": "居る",
+		"sentence": "猫が部屋に居ます。",
+		"translation": "There is a cat in the room."
+	},
+	{
+		"kanji": "呼ぶ",
+		"sentence": "先生を呼びました。",
+		"translation": "I called the teacher."
+	},
+	{
+		"kanji": "疲れる",
+		"sentence": "歩いて疲れました。",
+		"translation": "I got tired from walking."
+	},
+	{
+		"kanji": "閉める",
+		"sentence": "ドアを閉めてください。",
+		"translation": "Please close the door."
+	},
+	{
+		"kanji": "寒い",
+		"sentence": "今日は寒いですね。",
+		"translation": "It's cold today, isn't it?"
+	},
+	{
+		"kanji": "空",
+		"sentence": "空が青いです。",
+		"translation": "The sky is blue."
+	},
+	{
+		"kanji": "返す",
+		"sentence": "本を図書館に返しました。",
+		"translation": "I returned the book to the library."
+	},
+	{
+		"kanji": "答える",
+		"sentence": "先生の質問に答えました。",
+		"translation": "I answered the teacher’s question."
+	},
+	{
+		"kanji": "明後日",
+		"sentence": "明後日は日曜日です。",
+		"translation": "The day after tomorrow is Sunday."
+	},
+	{
+		"kanji": "九つ",
+		"sentence": "九つのりんごがあります。",
+		"translation": "There are nine apples."
+	},
+	{
+		"kanji": "両親",
+		"sentence": "両親と一緒に住んでいます。",
+		"translation": "I live with my parents."
+	},
+	{
+		"kanji": "晩御飯",
+		"sentence": "晩御飯にカレーを食べました。",
+		"translation": "I had curry for dinner."
+	},
+	{
+		"kanji": "大切",
+		"sentence": "友達は大切です。",
+		"translation": "Friends are important."
+	},
+	{
+		"kanji": "今月",
+		"sentence": "今月は忙しいです。",
+		"translation": "This month is busy."
+	},
+	{
+		"kanji": "窓",
+		"sentence": "窓を開けてください。",
+		"translation": "Please open the window."
+	},
+	{
+		"kanji": "御飯",
+		"sentence": "朝御飯を食べましたか？",
+		"translation": "Did you eat breakfast?"
+	},
+	{
+		"kanji": "片仮名",
+		"sentence": "片仮名で名前を書いてください。",
+		"translation": "Please write your name in katakana."
+	},
+	{
+		"kanji": "困る",
+		"sentence": "道に迷って困りました。",
+		"translation": "I got lost and was troubled."
+	},
+	{
+		"kanji": "水曜日",
+		"sentence": "水曜日に会いましょう。",
+		"translation": "Let’s meet on Wednesday."
+	},
+	{
+		"kanji": "強い",
+		"sentence": "彼はとても強いです。",
+		"translation": "He is very strong."
+	},
+	{
+		"kanji": "夕方",
+		"sentence": "夕方に散歩します。",
+		"translation": "I take a walk in the evening."
+	},
+	{
+		"kanji": "紙",
+		"sentence": "紙に名前を書いてください。",
+		"translation": "Please write your name on the paper."
+	},
+	{
+		"kanji": "～歳",
+		"sentence": "私は二十歳です。",
+		"translation": "I am 20 years old."
+	},
+	{
+		"kanji": "大丈夫",
+		"sentence": "はい、大丈夫です。",
+		"translation": "Yes, I’m okay."
+	},
+	{
+		"kanji": "曇る",
+		"sentence": "空が曇ってきました。",
+		"translation": "The sky has become cloudy."
+	},
+	{
+		"kanji": "村",
+		"sentence": "その村は山の中にあります。",
+		"translation": "The village is in the mountains."
+	},
+	{
+		"kanji": "楽しい",
+		"sentence": "旅行はとても楽しかったです。",
+		"translation": "The trip was very fun."
+	},
+	{
+		"kanji": "静か",
+		"sentence": "この図書館は静かです。",
+		"translation": "This library is quiet."
+	},
+	{
+		"kanji": "吹く",
+		"sentence": "風が強く吹いています。",
+		"translation": "The wind is blowing strongly."
+	},
+	{
+		"kanji": "荷物",
+		"sentence": "荷物が重いです。",
+		"translation": "The luggage is heavy."
+	},
+	{
+		"kanji": "町",
+		"sentence": "町を歩いています。",
+		"translation": "I am walking through the town."
+	},
+	{
+		"kanji": "青",
+		"sentence": "空は青いです。",
+		"translation": "The sky is blue."
+	},
+	{
+		"kanji": "～番",
+		"sentence": "三番のバスに乗ります。",
+		"translation": "I take bus number three."
+	},
+	{
+		"kanji": "小さい",
+		"sentence": "小さい子どもが遊んでいます。",
+		"translation": "A small child is playing."
+	},
+	{
+		"kanji": "洗濯",
+		"sentence": "毎日洗濯をします。",
+		"translation": "I do laundry every day."
+	},
+	{
+		"kanji": "寝る",
+		"sentence": "十時に寝ます。",
+		"translation": "I go to bed at ten."
+	},
+	{
+		"kanji": "咲く",
+		"sentence": "桜が咲きました。",
+		"translation": "The cherry blossoms have bloomed."
+	},
+	{
+		"kanji": "入る",
+		"sentence": "教室に入ります。",
+		"translation": "I enter the classroom."
+	},
+	{
+		"kanji": "毎月",
+		"sentence": "毎月お金を貯金します。",
+		"translation": "I save money every month."
+	},
+	{
+		"kanji": "四つ",
+		"sentence": "四つのりんごがあります。",
+		"translation": "There are four apples."
+	},
+	{
+		"kanji": "雪",
+		"sentence": "雪が降っています。",
+		"translation": "It is snowing."
+	},
+	{
+		"kanji": "帽子",
+		"sentence": "帽子をかぶります。",
+		"translation": "I wear a hat."
+	},
+	{
+		"kanji": "土曜日",
+		"sentence": "土曜日に買い物に行きます。",
+		"translation": "I go shopping on Saturday."
+	},
+	{
+		"kanji": "七日",
+		"sentence": "七日は日曜日です。",
+		"translation": "The seventh is Sunday."
+	},
+	{
+		"kanji": "緑",
+		"sentence": "緑の服を着ます。",
+		"translation": "I wear green clothes."
+	},
+	{
+		"kanji": "火曜日",
+		"sentence": "火曜日は忙しいです。",
+		"translation": "Tuesday is busy."
+	},
+	{
+		"kanji": "本当",
+		"sentence": "それは本当ですか？",
+		"translation": "Is that true?"
+	},
+	{
+		"kanji": "夏休み",
+		"sentence": "夏休みに旅行します。",
+		"translation": "I will travel during summer vacation."
+	},
+	{
+		"kanji": "女の子",
+		"sentence": "女の子が笑っています。",
+		"translation": "The girl is smiling."
+	},
+	{
+		"kanji": "箱",
+		"sentence": "箱の中に猫がいます。",
+		"translation": "There is a cat in the box."
+	},
+	{
+		"kanji": "習う",
+		"sentence": "ピアノを習っています。",
+		"translation": "I am learning the piano."
+	},
+	{
+		"kanji": "お手洗い",
+		"sentence": "お手洗いはどこですか？",
+		"translation": "Where is the restroom?"
+	},
+	{
+		"kanji": "西",
+		"sentence": "太陽は西に沈みます。",
+		"translation": "The sun sets in the west."
+	},
+	{
+		"kanji": "階段",
+		"sentence": "階段を上がります。",
+		"translation": "I go up the stairs."
+	},
+	{
+		"kanji": "元気",
+		"sentence": "今日は元気です。",
+		"translation": "I am well today."
+	},
+	{
+		"kanji": "洋服",
+		"sentence": "新しい洋服を買いました。",
+		"translation": "I bought new clothes."
+	},
+	{
+		"kanji": "家",
+		"sentence": "家に帰ります。",
+		"translation": "I go home."
+	},
+	{
+		"kanji": "封筒",
+		"sentence": "手紙を封筒に入れました。",
+		"translation": "I put the letter in an envelope."
+	},
+	{
+		"kanji": "名前",
+		"sentence": "名前を書いてください。",
+		"translation": "Please write your name."
+	},
+	{
+		"kanji": "結婚",
+		"sentence": "来年結婚します。",
+		"translation": "I will get married next year."
+	},
+	{
+		"kanji": "遠い",
+		"sentence": "駅は遠いですか？",
+		"translation": "Is the station far?"
+	},
+	{
+		"kanji": "お弁当",
+		"sentence": "お弁当を持ってきました。",
+		"translation": "I brought a lunch box."
+	},
+	{
+		"kanji": "帰る",
+		"sentence": "家に帰ります。",
+		"translation": "I go home."
+	},
+	{
+		"kanji": "学校",
+		"sentence": "学校に行きます。",
+		"translation": "I go to school."
+	},
+	{
+		"kanji": "留学生",
+		"sentence": "私は留学生です。",
+		"translation": "I am an exchange student."
+	},
+	{
+		"kanji": "四日",
+		"sentence": "四日に会いましょう。",
+		"translation": "Let’s meet on the fourth."
+	},
+	{
+		"kanji": "～くらい; ぐらい",
+		"sentence": "一時間ぐらいかかります。",
+		"translation": "It takes about one hour."
+	},
+	{
+		"kanji": "締める",
+		"sentence": "ドアを締めてください。",
+		"translation": "Please close the door."
+	},
+	{
+		"kanji": "走る",
+		"sentence": "毎朝公園で走ります。",
+		"translation": "I run in the park every morning."
+	},
+	{
+		"kanji": "春",
+		"sentence": "春が好きです。",
+		"translation": "I like spring."
+	},
+	{
+		"kanji": "～年",
+		"sentence": "来年日本へ行きます。",
+		"translation": "I will go to Japan next year."
+	},
+	{
+		"kanji": "晩",
+		"sentence": "晩に友達と会いました。",
+		"translation": "I met my friend in the evening."
+	},
+	{
+		"kanji": "～人",
+		"sentence": "三人で映画を見ました。",
+		"translation": "Three people watched a movie."
+	},
+	{
+		"kanji": "暖かい",
+		"sentence": "今日は暖かいですね。",
+		"translation": "It’s warm today, isn’t it?"
+	},
+	{
+		"kanji": "南",
+		"sentence": "南の空に星が見えます。",
+		"translation": "You can see stars in the southern sky."
+	},
+	{
+		"kanji": "醤油",
+		"sentence": "醤油を料理に使います。",
+		"translation": "I use soy sauce in cooking."
+	},
+	{
+		"kanji": "古い",
+		"sentence": "この本はとても古いです。",
+		"translation": "This book is very old."
+	},
+	{
+		"kanji": "戸",
+		"sentence": "戸を閉めてください。",
+		"translation": "Please close the door."
+	},
+	{
+		"kanji": "上手",
+		"sentence": "彼はサッカーが上手です。",
+		"translation": "He is good at soccer."
+	},
+	{
+		"kanji": "大使館",
+		"sentence": "明日、大使館へ行きます。",
+		"translation": "I will go to the embassy tomorrow."
+	},
+	{
+		"kanji": "～日",
+		"sentence": "日本に三日います。",
+		"translation": "I will stay in Japan for three days."
+	},
+	{
+		"kanji": "分かる",
+		"sentence": "この問題が分かりますか。",
+		"translation": "Do you understand this problem?"
+	},
+	{
+		"kanji": "来年",
+		"sentence": "来年、日本へ行きます。",
+		"translation": "I will go to Japan next year."
+	},
+	{
+		"kanji": "二人",
+		"sentence": "二人で散歩しました。",
+		"translation": "The two of us took a walk."
+	},
+	{
+		"kanji": "少ない",
+		"sentence": "この店はお客さんが少ないです。",
+		"translation": "There are few customers in this store."
+	},
+	{
+		"kanji": "花",
+		"sentence": "庭に花が咲いています。",
+		"translation": "Flowers are blooming in the garden."
+	},
+	{
+		"kanji": "意味",
+		"sentence": "この言葉の意味を知っていますか。",
+		"translation": "Do you know the meaning of this word?"
+	},
+	{
+		"kanji": "高い",
+		"sentence": "この時計は高いです。",
+		"translation": "This watch is expensive."
+	},
+	{
+		"kanji": "お母さん",
+		"sentence": "お母さんと一緒に買い物に行きました。",
+		"translation": "I went shopping with my mother."
+	},
+	{
+		"kanji": "紅茶",
+		"sentence": "毎朝、紅茶を飲みます。",
+		"translation": "I drink black tea every morning."
+	},
+	{
+		"kanji": "重い",
+		"sentence": "このかばんは重いです。",
+		"translation": "This bag is heavy."
+	},
+	{
+		"kanji": "左",
+		"sentence": "左に曲がってください。",
+		"translation": "Please turn left."
+	},
+	{
+		"kanji": "十日",
+		"sentence": "十日間旅行します。",
+		"translation": "I will travel for ten days."
+	},
+	{
+		"kanji": "起きる",
+		"sentence": "毎朝六時に起きます。",
+		"translation": "I wake up at six every morning."
+	},
+	{
+		"kanji": "新聞",
+		"sentence": "新聞を読みます。",
+		"translation": "I read the newspaper."
+	},
+	{
+		"kanji": "丁度",
+		"sentence": "丁度三時に会いましょう。",
+		"translation": "Let’s meet at exactly three o’clock."
+	},
+	{
+		"kanji": "中",
+		"sentence": "箱の中に何がありますか。",
+		"translation": "What is inside the box?"
+	},
+	{
+		"kanji": "頭",
+		"sentence": "頭が痛いです。",
+		"translation": "I have a headache."
+	},
+	{
+		"kanji": "私",
+		"sentence": "私の名前はゆうこです。",
+		"translation": "My name is Yuko."
+	},
+	{
+		"kanji": "九日",
+		"sentence": "九日に試験があります。",
+		"translation": "There is an exam on the ninth."
+	},
+	{
+		"kanji": "鳥",
+		"sentence": "木の上に鳥がいます。",
+		"translation": "There is a bird in the tree."
+	},
+	{
+		"kanji": "父",
+		"sentence": "父は会社員です。",
+		"translation": "My father is a company employee."
+	},
+	{
+		"kanji": "薄い",
+		"sentence": "このノートは薄いです。",
+		"translation": "This notebook is thin."
+	},
+	{
+		"kanji": "洗う",
+		"sentence": "手を洗ってください。",
+		"translation": "Please wash your hands."
+	},
+	{
+		"kanji": "易しい",
+		"sentence": "この本は易しいです。",
+		"translation": "This book is easy."
+	},
+	{
+		"kanji": "出口",
+		"sentence": "出口はどこですか。",
+		"translation": "Where is the exit?"
+	},
+	{
+		"kanji": "危ない",
+		"sentence": "ここは危ないです。",
+		"translation": "It is dangerous here."
+	},
+	{
+		"kanji": "足; 脚",
+		"sentence": "足が痛いです。",
+		"translation": "My leg hurts."
+	},
+	{
+		"kanji": "要る",
+		"sentence": "水が要ります。",
+		"translation": "I need water."
+	},
+	{
+		"kanji": "所",
+		"sentence": "静かな所が好きです。",
+		"translation": "I like quiet places."
+	},
+	{
+		"kanji": "辺",
+		"sentence": "この辺は静かです。",
+		"translation": "This area is quiet."
+	},
+	{
+		"kanji": "書く",
+		"sentence": "手紙を書きます。",
+		"translation": "I will write a letter."
+	},
+	{
+		"kanji": "宿題",
+		"sentence": "宿題をしました。",
+		"translation": "I did my homework."
+	},
+	{
+		"kanji": "国",
+		"sentence": "私の国は日本です。",
+		"translation": "My country is Japan."
+	},
+	{
+		"kanji": "～分",
+		"sentence": "あと五分で始まります。",
+		"translation": "It will start in five minutes."
+	},
+	{
+		"kanji": "初め; 始め",
+		"sentence": "初めに名前を書いてください。",
+		"translation": "Please write your name first."
+	},
+	{
+		"kanji": "勉強",
+		"sentence": "毎日日本語を勉強します。",
+		"translation": "I study Japanese every day."
+	},
+	{
+		"kanji": "靴下",
+		"sentence": "靴下をはきます。",
+		"translation": "I put on socks."
+	},
+	{
+		"kanji": "灰皿",
+		"sentence": "灰皿はありますか。",
+		"translation": "Do you have an ashtray?"
+	},
+	{
+		"kanji": "沢山",
+		"sentence": "ご飯を沢山食べました。",
+		"translation": "I ate a lot of rice."
+	},
+	{
+		"kanji": "料理",
+		"sentence": "日本料理が好きです。",
+		"translation": "I like Japanese food."
+	},
+	{
+		"kanji": "借りる",
+		"sentence": "友達にお金を借りました。",
+		"translation": "I borrowed money from a friend."
+	},
+	{
+		"kanji": "～か月",
+		"sentence": "二か月日本に住みました。",
+		"translation": "I lived in Japan for two months."
+	},
+	{
+		"kanji": "～階",
+		"sentence": "三階に図書館があります。",
+		"translation": "There is a library on the third floor."
+	},
+	{
+		"kanji": "玄関",
+		"sentence": "玄関で靴を脱ぎます。",
+		"translation": "I take off my shoes at the entrance."
+	},
+	{
+		"kanji": "言葉",
+		"sentence": "新しい言葉を覚えました。",
+		"translation": "I learned a new word."
+	},
+	{
+		"kanji": "七",
+		"sentence": "七つのリンゴがあります。",
+		"translation": "There are seven apples."
+	},
+	{
+		"kanji": "弱い",
+		"sentence": "この木は風に弱いです。",
+		"translation": "This tree is weak against the wind."
+	},
+	{
+		"kanji": "同じ",
+		"sentence": "二人は同じ年です。",
+		"translation": "The two people are the same age."
+	},
+	{
+		"kanji": "練習",
+		"sentence": "サッカーの練習をします。",
+		"translation": "I practice soccer."
+	},
+	{
+		"kanji": "八百屋",
+		"sentence": "八百屋で野菜を買いました。",
+		"translation": "I bought vegetables at the greengrocer."
+	},
+	{
+		"kanji": "駅",
+		"sentence": "駅まで歩きます。",
+		"translation": "I will walk to the station."
+	},
+	{
+		"kanji": "暗い",
+		"sentence": "この部屋は暗いです。",
+		"translation": "This room is dark."
+	},
+	{
+		"kanji": "電車",
+		"sentence": "毎朝電車に乗ります。",
+		"translation": "I ride the train every morning."
+	},
+	{
+		"kanji": "四",
+		"sentence": "四人で食事をしました。",
+		"translation": "Four people had a meal."
+	},
+	{
+		"kanji": "卵",
+		"sentence": "朝ご飯に卵を食べました。",
+		"translation": "I ate an egg for breakfast."
+	},
+	{
+		"kanji": "生まれる",
+		"sentence": "妹が昨日生まれました。",
+		"translation": "My younger sister was born yesterday."
+	},
+	{
+		"kanji": "年",
+		"sentence": "来年は二十歳になります。",
+		"translation": "I will turn twenty next year."
+	},
+	{
+		"kanji": "脱ぐ",
+		"sentence": "コートを脱いでください。",
+		"translation": "Please take off your coat."
+	},
+	{
+		"kanji": "一日",
+		"sentence": "一日中家にいました。",
+		"translation": "I was at home all day."
+	},
+	{
+		"kanji": "～台",
+		"sentence": "車が三台あります。",
+		"translation": "There are three cars."
+	},
+	{
+		"kanji": "川; 河",
+		"sentence": "川で泳ぎました。",
+		"translation": "I swam in the river."
+	},
+	{
+		"kanji": "先",
+		"sentence": "先生は先に行きました。",
+		"translation": "The teacher went ahead."
+	},
+	{
+		"kanji": "歌",
+		"sentence": "歌を歌いました。",
+		"translation": "I sang a song."
+	},
+	{
+		"kanji": "伯母さん; 叔母さん",
+		"sentence": "伯母さんの家に行きました。",
+		"translation": "I went to my aunt's house."
+	},
+	{
+		"kanji": "魚",
+		"sentence": "魚を食べました。",
+		"translation": "I ate fish."
+	},
+	{
+		"kanji": "飲む",
+		"sentence": "水を飲みます。",
+		"translation": "I drink water."
+	},
+	{
+		"kanji": "前",
+		"sentence": "駅の前で会いましょう。",
+		"translation": "Let's meet in front of the station."
+	},
+	{
+		"kanji": "着る",
+		"sentence": "服を着ます。",
+		"translation": "I put on clothes."
+	},
+	{
+		"kanji": "丈夫",
+		"sentence": "この机は丈夫です。",
+		"translation": "This desk is sturdy."
+	},
+	{
+		"kanji": "明日",
+		"sentence": "明日、学校があります。",
+		"translation": "There is school tomorrow."
+	},
+	{
+		"kanji": "子供",
+		"sentence": "子供が公園で遊んでいます。",
+		"translation": "Children are playing in the park."
+	},
+	{
+		"kanji": "一つ",
+		"sentence": "りんごを一つください。",
+		"translation": "Please give me one apple."
+	},
+	{
+		"kanji": "辞書",
+		"sentence": "辞書で言葉を調べます。",
+		"translation": "I look up words in the dictionary."
+	},
+	{
+		"kanji": "来月",
+		"sentence": "来月は忙しいです。",
+		"translation": "I will be busy next month."
+	},
+	{
+		"kanji": "天気",
+		"sentence": "今日は天気がいいです。",
+		"translation": "The weather is nice today."
+	},
+	{
+		"kanji": "～ころ; ～ごろ",
+		"sentence": "三時ごろに来てください。",
+		"translation": "Please come around three o'clock."
+	},
+	{
+		"kanji": "閉まる",
+		"sentence": "店は九時に閉まります。",
+		"translation": "The store closes at nine o'clock."
+	},
+	{
+		"kanji": "弟",
+		"sentence": "弟と遊びます。",
+		"translation": "I play with my younger brother."
+	},
+	{
+		"kanji": "～側",
+		"sentence": "右側にあります。",
+		"translation": "It's on the right side."
+	},
+	{
+		"kanji": "段々",
+		"sentence": "段々寒くなってきました。",
+		"translation": "It has gradually become colder."
+	},
+	{
+		"kanji": "切る",
+		"sentence": "紙を切ります。",
+		"translation": "I cut paper."
+	},
+	{
+		"kanji": "痛い",
+		"sentence": "歯が痛いです。",
+		"translation": "My tooth hurts."
+	},
+	{
+		"kanji": "開く",
+		"sentence": "ドアが開きます。",
+		"translation": "The door opens."
+	},
+	{
+		"kanji": "頼む",
+		"sentence": "友達に頼みました。",
+		"translation": "I asked my friend for help."
+	},
+	{
+		"kanji": "友達",
+		"sentence": "友達と映画を見ます。",
+		"translation": "I watch a movie with my friend."
+	},
+	{
+		"kanji": "来週",
+		"sentence": "来週旅行します。",
+		"translation": "I will travel next week."
+	},
+	{
+		"kanji": "並べる",
+		"sentence": "本を並べます。",
+		"translation": "I arrange the books."
+	},
+	{
+		"kanji": "出す",
+		"sentence": "手紙を出します。",
+		"translation": "I send a letter."
+	},
+	{
+		"kanji": "～月",
+		"sentence": "四月に桜が咲きます。",
+		"translation": "Cherry blossoms bloom in April."
+	},
+	{
+		"kanji": "速い",
+		"sentence": "彼は走るのが速いです。",
+		"translation": "He runs fast."
+	},
+	{
+		"kanji": "百",
+		"sentence": "百円持っています。",
+		"translation": "I have one hundred yen."
+	},
+	{
+		"kanji": "砂糖",
+		"sentence": "コーヒーに砂糖を入れます。",
+		"translation": "I put sugar in my coffee."
+	},
+	{
+		"kanji": "橋",
+		"sentence": "川に橋があります。",
+		"translation": "There is a bridge over the river."
+	},
+	{
+		"kanji": "背",
+		"sentence": "兄は背が高いです。",
+		"translation": "My older brother is tall."
+	},
+	{
+		"kanji": "仕事",
+		"sentence": "仕事が終わりました。",
+		"translation": "I finished my work."
+	},
+	{
+		"kanji": "毎日",
+		"sentence": "毎日走ります。",
+		"translation": "I run every day."
+	},
+	{
+		"kanji": "渡す",
+		"sentence": "彼に本を渡しました。",
+		"translation": "I handed him the book."
+	},
+	{
+		"kanji": "貸す",
+		"sentence": "友達にお金を貸しました。",
+		"translation": "I lent money to a friend."
+	},
+	{
+		"kanji": "電話",
+		"sentence": "友達に電話します。",
+		"translation": "I call my friend."
+	},
+	{
+		"kanji": "十",
+		"sentence": "十本の鉛筆があります。",
+		"translation": "There are ten pencils."
+	},
+	{
+		"kanji": "教える",
+		"sentence": "日本語を教えます。",
+		"translation": "I teach Japanese."
+	},
+	{
+		"kanji": "長い",
+		"sentence": "この道は長いです。",
+		"translation": "This road is long."
+	},
+	{
+		"kanji": "先週",
+		"sentence": "先週、友達に会いました。",
+		"translation": "I met a friend last week."
+	},
+	{
+		"kanji": "三つ",
+		"sentence": "三つ買いました。",
+		"translation": "I bought three."
+	},
+	{
+		"kanji": "若い",
+		"sentence": "彼はまだ若いです。",
+		"translation": "He is still young."
+	},
+	{
+		"kanji": "写真",
+		"sentence": "写真を撮りました。",
+		"translation": "I took a picture."
+	},
+	{
+		"kanji": "机",
+		"sentence": "新しい机を買いました。",
+		"translation": "I bought a new desk."
+	},
+	{
+		"kanji": "交番",
+		"sentence": "交番で道を聞きました。",
+		"translation": "I asked for directions at the police box."
+	},
+	{
+		"kanji": "先月",
+		"sentence": "先月引っ越しました。",
+		"translation": "I moved last month."
+	},
+	{
+		"kanji": "道",
+		"sentence": "この道をまっすぐ行きます。",
+		"translation": "Go straight on this road."
+	},
+	{
+		"kanji": "嫌",
+		"sentence": "野菜が嫌いです。",
+		"translation": "I dislike vegetables."
+	},
+	{
+		"kanji": "廊下",
+		"sentence": "廊下を歩きます。",
+		"translation": "I walk in the hallway."
+	},
+	{
+		"kanji": "来る",
+		"sentence": "友達が来ます。",
+		"translation": "A friend is coming."
+	},
+	{
+		"kanji": "今日",
+		"sentence": "今日は忙しいです。",
+		"translation": "I am busy today."
+	},
+	{
+		"kanji": "家族",
+		"sentence": "家族と一緒に住んでいます。",
+		"translation": "I live with my family."
+	},
+	{
+		"kanji": "人",
+		"sentence": "たくさんの人がいます。",
+		"translation": "There are many people."
+	},
+	{
+		"kanji": "早い",
+		"sentence": "彼は来るのが早いです。",
+		"translation": "He comes early."
+	},
+	{
+		"kanji": "～週間",
+		"sentence": "二週間勉強します。",
+		"translation": "I will study for two weeks."
+	},
+	{
+		"kanji": "男",
+		"sentence": "男の子が遊んでいます。",
+		"translation": "A boy is playing."
+	},
+	{
+		"kanji": "可愛い",
+		"sentence": "この犬は可愛いです。",
+		"translation": "This dog is cute."
+	},
+	{
+		"kanji": "九",
+		"sentence": "九時に会いましょう。",
+		"translation": "Let's meet at nine o'clock."
+	},
+	{
+		"kanji": "面白い",
+		"sentence": "この映画は面白いです。",
+		"translation": "This movie is interesting."
+	},
+	{
+		"kanji": "丸い; 円い",
+		"sentence": "丸いテーブルがあります。",
+		"translation": "There is a round table."
+	},
+	{
+		"kanji": "甘い",
+		"sentence": "ケーキは甘いです。",
+		"translation": "The cake is sweet."
+	},
+	{
+		"kanji": "八日",
+		"sentence": "八日に会いましょう。",
+		"translation": "Let's meet on the eighth."
+	},
+	{
+		"kanji": "吸う",
+		"sentence": "たばこを吸わないでください。",
+		"translation": "Please don’t smoke."
+	},
+	{
+		"kanji": "引く",
+		"sentence": "ドアを引いてください。",
+		"translation": "Please pull the door."
+	},
+	{
+		"kanji": "誕生日",
+		"sentence": "彼の誕生日は六月です。",
+		"translation": "His birthday is in June."
+	},
+	{
+		"kanji": "～がる",
+		"sentence": "彼は寒がっています。",
+		"translation": "He is feeling cold."
+	},
+	{
+		"kanji": "入れる",
+		"sentence": "カバンに本を入れました。",
+		"translation": "I put a book in the bag."
+	},
+	{
+		"kanji": "冷たい",
+		"sentence": "冷たい水を飲みました。",
+		"translation": "I drank cold water."
+	},
+	{
+		"kanji": "上",
+		"sentence": "本は机の上にあります。",
+		"translation": "The book is on the desk."
+	},
+	{
+		"kanji": "～匹",
+		"sentence": "猫が三匹います。",
+		"translation": "There are three cats."
+	},
+	{
+		"kanji": "見せる",
+		"sentence": "写真を見せてください。",
+		"translation": "Please show me the photo."
+	},
+	{
+		"kanji": "時計",
+		"sentence": "新しい時計を買いました。",
+		"translation": "I bought a new watch."
+	},
+	{
+		"kanji": "見る",
+		"sentence": "映画を見ます。",
+		"translation": "I watch a movie."
+	},
+	{
+		"kanji": "言う",
+		"sentence": "先生が何かを言いました。",
+		"translation": "The teacher said something."
+	},
+	{
+		"kanji": "石鹸",
+		"sentence": "石鹸で手を洗います。",
+		"translation": "I wash my hands with soap."
+	},
+	{
+		"kanji": "庭",
+		"sentence": "庭に花があります。",
+		"translation": "There are flowers in the garden."
+	},
+	{
+		"kanji": "悪い",
+		"sentence": "それは悪い考えです。",
+		"translation": "That is a bad idea."
+	},
+	{
+		"kanji": "耳",
+		"sentence": "耳が痛いです。",
+		"translation": "My ear hurts."
+	},
+	{
+		"kanji": "安い",
+		"sentence": "このシャツは安いです。",
+		"translation": "This shirt is cheap."
+	},
+	{
+		"kanji": "飛行機",
+		"sentence": "飛行機で東京へ行きます。",
+		"translation": "I go to Tokyo by airplane."
+	},
+	{
+		"kanji": "店",
+		"sentence": "あの店は有名です。",
+		"translation": "That store is famous."
+	},
+	{
+		"kanji": "車",
+		"sentence": "新しい車を買いました。",
+		"translation": "I bought a new car."
+	},
+	{
+		"kanji": "今年",
+		"sentence": "今年はたくさん勉強します。",
+		"translation": "I will study a lot this year."
+	},
+	{
+		"kanji": "問題",
+		"sentence": "この問題は難しいです。",
+		"translation": "This problem is difficult."
+	},
+	{
+		"kanji": "切手",
+		"sentence": "切手を買いました。",
+		"translation": "I bought a stamp."
+	},
+	{
+		"kanji": "お茶",
+		"sentence": "日本のお茶はおいしいです。",
+		"translation": "Japanese tea is delicious."
+	},
+	{
+		"kanji": "待つ",
+		"sentence": "友だちを待っています。",
+		"translation": "I'm waiting for my friend."
+	},
+	{
+		"kanji": "手",
+		"sentence": "手をあげてください。",
+		"translation": "Please raise your hand."
+	},
+	{
+		"kanji": "入口",
+		"sentence": "入口はあちらです。",
+		"translation": "The entrance is over there."
+	},
+	{
+		"kanji": "飴",
+		"sentence": "飴をもらいました。",
+		"translation": "I received candy."
+	},
+	{
+		"kanji": "大きな",
+		"sentence": "大きな家に住んでいます。",
+		"translation": "I live in a big house."
+	},
+	{
+		"kanji": "誰",
+		"sentence": "あの人は誰ですか。",
+		"translation": "Who is that person?"
+	},
+	{
+		"kanji": "押す",
+		"sentence": "ボタンを押してください。",
+		"translation": "Please press the button."
+	},
+	{
+		"kanji": "風邪",
+		"sentence": "風邪をひきました。",
+		"translation": "I caught a cold."
+	},
+	{
+		"kanji": "死ぬ",
+		"sentence": "魚が死にました。",
+		"translation": "The fish died."
+	},
+	{
+		"kanji": "鶏肉",
+		"sentence": "鶏肉を食べます。",
+		"translation": "I eat chicken."
+	},
+	{
+		"kanji": "鼻",
+		"sentence": "鼻がつまっています。",
+		"translation": "My nose is stuffed."
+	},
+	{
+		"kanji": "開ける",
+		"sentence": "窓を開けてください。",
+		"translation": "Please open the window."
+	},
+	{
+		"kanji": "歌う",
+		"sentence": "日本の歌を歌います。",
+		"translation": "I sing a Japanese song."
+	},
+	{
+		"kanji": "便利",
+		"sentence": "スマホは便利です。",
+		"translation": "Smartphones are convenient."
+	},
+	{
+		"kanji": "銀行",
+		"sentence": "銀行へ行きます。",
+		"translation": "I’m going to the bank."
+	},
+	{
+		"kanji": "黒",
+		"sentence": "黒いかばんがあります。",
+		"translation": "There is a black bag."
+	},
+	{
+		"kanji": "全部",
+		"sentence": "全部食べました。",
+		"translation": "I ate everything."
+	},
+	{
+		"kanji": "千",
+		"sentence": "千円あります。",
+		"translation": "I have 1,000 yen."
+	},
+	{
+		"kanji": "掛ける",
+		"sentence": "電話を掛けます。",
+		"translation": "I make a phone call."
+	},
+	{
+		"kanji": "平仮名",
+		"sentence": "平仮名を勉強します。",
+		"translation": "I study hiragana."
+	},
+	{
+		"kanji": "黄色い",
+		"sentence": "黄色い花がきれいです。",
+		"translation": "The yellow flower is pretty."
+	},
+	{
+		"kanji": "忘れる",
+		"sentence": "名前を忘れました。",
+		"translation": "I forgot the name."
+	},
+	{
+		"kanji": "二十日",
+		"sentence": "二十日は私の誕生日です。",
+		"translation": "The 20th is my birthday."
+	},
+	{
+		"kanji": "零",
+		"sentence": "気温は零度です。",
+		"translation": "The temperature is zero degrees."
+	},
+	{
+		"kanji": "赤",
+		"sentence": "赤いりんごを食べました。",
+		"translation": "I ate a red apple."
+	},
+	{
+		"kanji": "旅行",
+		"sentence": "旅行が好きです。",
+		"translation": "I like traveling."
+	},
+	{
+		"kanji": "お金",
+		"sentence": "お金がありません。",
+		"translation": "I don’t have money."
+	},
+	{
+		"kanji": "郵便局",
+		"sentence": "郵便局へ手紙を出しに行きます。",
+		"translation": "I go to the post office to send a letter."
+	},
+	{
+		"kanji": "毎週",
+		"sentence": "毎週日曜日に買い物します。",
+		"translation": "I go shopping every Sunday."
+	},
+	{
+		"kanji": "お風呂",
+		"sentence": "お風呂に入ります。",
+		"translation": "I take a bath."
+	},
+	{
+		"kanji": "病気",
+		"sentence": "母は病気です。",
+		"translation": "My mother is sick."
+	},
+	{
+		"kanji": "熱い",
+		"sentence": "熱いスープを飲みました。",
+		"translation": "I drank hot soup."
+	},
+	{
+		"kanji": "大勢",
+		"sentence": "駅に大勢の人がいます。",
+		"translation": "There are many people at the station."
+	},
+	{
+		"kanji": "出かける",
+		"sentence": "友だちと出かけます。",
+		"translation": "I go out with my friend."
+	},
+	{
+		"kanji": "話",
+		"sentence": "楽しい話をしました。",
+		"translation": "We had a fun talk."
+	},
+	{
+		"kanji": "鳴く",
+		"sentence": "鳥が鳴いています。",
+		"translation": "A bird is chirping."
+	},
+	{
+		"kanji": "半",
+		"sentence": "七時半に起きます。",
+		"translation": "I get up at 7:30."
+	},
+	{
+		"kanji": "番号",
+		"sentence": "電話番号を教えてください。",
+		"translation": "Please tell me your phone number."
+	},
+	{
+		"kanji": "朝",
+		"sentence": "朝ごはんを食べました。",
+		"translation": "I ate breakfast."
+	},
+	{
+		"kanji": "豚肉",
+		"sentence": "豚肉が好きです。",
+		"translation": "I like pork."
+	},
+	{
+		"kanji": "広い",
+		"sentence": "この部屋は広いです。",
+		"translation": "This room is spacious."
+	},
+	{
+		"kanji": "伯父; 叔父さん",
+		"sentence": "叔父さんは医者です。",
+		"translation": "My uncle is a doctor."
+	},
+	{
+		"kanji": "消す",
+		"sentence": "電気を消してください。",
+		"translation": "Please turn off the light."
+	},
+	{
+		"kanji": "降りる",
+		"sentence": "次の駅で電車を降ります。",
+		"translation": "I will get off the train at the next station."
+	},
+	{
+		"kanji": "毎晩",
+		"sentence": "私は毎晩読書をします。",
+		"translation": "I read books every night."
+	},
+	{
+		"kanji": "赤い",
+		"sentence": "彼女は赤いドレスを着ています。",
+		"translation": "She is wearing a red dress."
+	},
+	{
+		"kanji": "余り",
+		"sentence": "余りは冷蔵庫に入れてください。",
+		"translation": "Please put the leftovers in the fridge."
+	},
+	{
+		"kanji": "色々",
+		"sentence": "色々な国を旅行したいです。",
+		"translation": "I want to travel to various countries."
+	},
+	{
+		"kanji": "授業",
+		"sentence": "授業は8時に始まります。",
+		"translation": "Class starts at 8 o'clock."
+	},
+	{
+		"kanji": "泳ぐ",
+		"sentence": "私は夏によく川で泳ぎます。",
+		"translation": "I often swim in the river during summer."
+	},
+	{
+		"kanji": "地図",
+		"sentence": "道に迷ったので地図を見ました。",
+		"translation": "I got lost, so I looked at a map."
+	},
+	{
+		"kanji": "大好き",
+		"sentence": "私は猫が大好きです。",
+		"translation": "I love cats."
+	},
+	{
+		"kanji": "外国",
+		"sentence": "彼は外国に住んでいます。",
+		"translation": "He lives in a foreign country."
+	},
+	{
+		"kanji": "雑誌",
+		"sentence": "この雑誌はとても人気があります。",
+		"translation": "This magazine is very popular."
+	},
+	{
+		"kanji": "海",
+		"sentence": "夏に家族と海へ行きました。",
+		"translation": "I went to the sea with my family in summer."
+	},
+	{
+		"kanji": "目",
+		"sentence": "彼女の目はとても大きいです。",
+		"translation": "Her eyes are very big."
+	},
+	{
+		"kanji": "木",
+		"sentence": "庭に大きな木があります。",
+		"translation": "There is a big tree in the garden."
+	},
+	{
+		"kanji": "聞く",
+		"sentence": "先生に質問を聞きました。",
+		"translation": "I asked the teacher a question."
+	}
+]

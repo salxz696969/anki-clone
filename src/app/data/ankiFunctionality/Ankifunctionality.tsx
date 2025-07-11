@@ -9,6 +9,8 @@ type Doc = {
 	kana: string;
 	kanji: string;
 	wordId: string;
+	sentence: string;
+	translation: string;
 };
 
 const Ankifunctionality = () => {
@@ -70,6 +72,7 @@ const Ankifunctionality = () => {
 					}
 				);
 				setWordForToday(res.data.wordsForToday);
+				console.log("Fetched words:", res.data.wordsForToday);
 			} catch (error) {
 				console.error(error);
 			} finally {
@@ -119,11 +122,11 @@ const Ankifunctionality = () => {
 		if (!wordForToday) return;
 		const correctAnswers = wordForToday[counter].kana
 			.split(";")
-			.map(ans => ans.replace(/\s+/g, "").normalize("NFKC"));
+			.map((ans) => ans.replace(/\s+/g, "").normalize("NFKC"));
 
 		const userAnswer = inputAnswer.replace(/\s+/g, "").normalize("NFKC");
 
-		if (correctAnswers.some(ans => userAnswer === ans)) {
+		if (correctAnswers.some((ans) => userAnswer === ans)) {
 			setComponentMode("studyAgain");
 		}
 	};
@@ -187,6 +190,20 @@ const Ankifunctionality = () => {
 			<div className="text-2xl text-blue-300 text-center mb-6 font-mono bg-white/5 py-3 px-4 rounded-lg border border-white/20">
 				{wordForToday?.[counter].kana}
 			</div>
+			<div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border border-white/10 shadow-lg">
+				<div className="text-sm font-medium text-slate-300 mb-3 text-center uppercase tracking-wider">
+					Example Sentence
+				</div>
+				<div className="space-y-3">
+					<div className="text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-lg border border-slate-400/20">
+						{wordForToday?.[counter].sentence}
+					</div>
+					<div className="text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-lg border border-slate-400/20">
+						{wordForToday?.[counter].translation}
+					</div>
+				</div>
+			</div>
+
 			<button
 				className="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
 				onClick={continueToTheNext}
@@ -231,6 +248,22 @@ const Ankifunctionality = () => {
 			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20">
 				{wordForToday?.[counter].english}
 			</div>
+
+			{/* Styled Example Sentence Section */}
+			<div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border border-white/10 shadow-lg">
+				<div className="text-sm font-medium text-slate-300 mb-3 text-center uppercase tracking-wider">
+					Example Sentence
+				</div>
+				<div className="space-y-3">
+					<div className="text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-lg border border-slate-400/20">
+						{wordForToday?.[counter].sentence}
+					</div>
+					<div className="text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-lg border border-slate-400/20">
+						{wordForToday?.[counter].translation}
+					</div>
+				</div>
+			</div>
+
 			<div className="grid grid-cols-3 gap-3">
 				<button
 					className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold py-3 px-4 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"

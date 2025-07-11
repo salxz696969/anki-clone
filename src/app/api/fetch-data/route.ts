@@ -100,9 +100,10 @@ const fetchLearntWords = async (
 			english: doc.data().english,
 			kana: doc.data().kana,
 			kanji: doc.data().kanji,
+			sentence: doc.data().sentence,
+			translation: doc.data().translation,
 		}));
 		return wordsForToday;
-		return []
 	} catch (error) {
 		console.error(error);
 		return [];
