@@ -13,7 +13,7 @@ type Doc = {
 
 const Ankifunctionality = () => {
 	const [wordForToday, setWordForToday] = useState<Doc[]>([]);
-	const [desiredAmount, setDesiredAmount] = useState(30);
+	const [desiredAmount, setDesiredAmount] = useState(10);
 	const [inputAnswer, setInputAnswer] = useState("");
 	const [counter, setCounter] = useState(0);
 	const [token, setToken] = useState("");
@@ -117,10 +117,13 @@ const Ankifunctionality = () => {
 
 	const submit = () => {
 		if (!wordForToday) return;
-		if (
-			inputAnswer.replace(/\s+/g, "").normalize("NFKC") ===
-			wordForToday[counter].kana.replace(/\s+/g, "").normalize("NFKC")
-		) {
+		const correctAnswers = wordForToday[counter].kana
+			.split(";")
+			.map(ans => ans.replace(/\s+/g, "").normalize("NFKC"));
+
+		const userAnswer = inputAnswer.replace(/\s+/g, "").normalize("NFKC");
+
+		if (correctAnswers.some(ans => userAnswer === ans)) {
 			setComponentMode("studyAgain");
 		}
 	};

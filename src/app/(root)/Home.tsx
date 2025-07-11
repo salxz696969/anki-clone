@@ -13,7 +13,7 @@ const Home = () => {
 				<div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
 					<button
 						onClick={() => {
-							router.push("/auth//signUp");
+							router.push("/auth/signUp");
 						}}
 						className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold py-4 px-8 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
 					>
@@ -24,7 +24,7 @@ const Home = () => {
 
 					<button
 						onClick={() => {
-							router.push("/auth//signUp");
+							router.push("/auth/signIn");
 						}}
 						className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-4 px-8 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl text-lg"
 					>
