@@ -44,7 +44,7 @@ const batchUpdate = async (
 	// console.log(idAndDifficultyArr)
 	for (const idAndDifficulty of idAndDifficultyArr) {
 		const ref = adminDB
-			.collection("users")
+			.collection("users2")
 			.doc(uid)
 			.collection("learntWords")
 			.doc(idAndDifficulty.id);
