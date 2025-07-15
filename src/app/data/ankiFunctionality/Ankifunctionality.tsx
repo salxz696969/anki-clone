@@ -184,10 +184,10 @@ const Ankifunctionality = () => {
 
 	const skipComponent = () => (
 		<>
-			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20">
+			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20 break-words">
 				{wordForToday?.[counter].english}
 			</div>
-			<div className="text-2xl text-blue-300 text-center mb-6 font-mono bg-white/5 py-3 px-4 rounded-lg border border-white/20">
+			<div className="text-2xl text-blue-300 text-center mb-6 font-mono bg-white/5 py-3 px-4 rounded-lg border border-white/20 break-words">
 				{wordForToday?.[counter].kana}
 			</div>
 			<div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border border-white/10 shadow-lg">
@@ -195,10 +195,10 @@ const Ankifunctionality = () => {
 					Example Sentence
 				</div>
 				<div className="space-y-3">
-					<div className="text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-lg border border-slate-400/20">
+					<div className="text-lg sm:text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-lg border border-slate-400/20 break-words">
 						{wordForToday?.[counter].sentence}
 					</div>
-					<div className="text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-lg border border-slate-400/20">
+					<div className="text-lg sm:text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-lg border border-slate-400/20 break-words">
 						{wordForToday?.[counter].translation}
 					</div>
 				</div>
@@ -245,7 +245,7 @@ const Ankifunctionality = () => {
 
 	const studyAgainComponent = () => (
 		<form className="flex flex-col gap-4">
-			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20">
+			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20 break-words">
 				{wordForToday?.[counter].english}
 			</div>
 
@@ -255,10 +255,10 @@ const Ankifunctionality = () => {
 					Example Sentence
 				</div>
 				<div className="space-y-3">
-					<div className="text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-lg border border-slate-400/20">
+					<div className="text-lg sm:text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-lg border border-slate-400/20 break-words">
 						{wordForToday?.[counter].sentence}
 					</div>
-					<div className="text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-lg border border-slate-400/20">
+					<div className="text-lg sm:text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-lg border border-slate-400/20 break-words">
 						{wordForToday?.[counter].translation}
 					</div>
 				</div>
@@ -306,7 +306,7 @@ const Ankifunctionality = () => {
 				}
 			}}
 		>
-			<div className="bg-slate-800 shadow-2xl rounded-lg p-8 w-full max-w-lg border border-slate-600">
+			<div className="bg-slate-800 shadow-2xl rounded-lg p-6 sm:p-8 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl border border-slate-600 mx-auto">
 				<div className="mb-8">
 					<label className="block text-white font-medium mb-2">
 						Select Amount
@@ -327,7 +327,7 @@ const Ankifunctionality = () => {
 					</select>
 				</div>
 
-				<div className="text-4xl text-center mb-8 text-slate-800 bg-white rounded-lg py-8 px-4 shadow-inner border-2 border-white/50 min-h-[120px] flex items-center justify-center">
+				<div className="text-2xl sm:text-3xl md:text-4xl text-center mb-8 text-slate-800 bg-white rounded-lg py-6 sm:py-8 px-4 shadow-inner border-2 border-white/50 min-h-[100px] sm:min-h-[120px] flex items-center justify-center break-words">
 					{loading ? (
 						<span className="inline-block">
 							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite]"></span>
@@ -338,7 +338,7 @@ const Ankifunctionality = () => {
 						</span>
 					) : (
 						wordForToday?.[counter]?.kanji || (
-							<span className="text-slate-500 text-2xl">
+							<span className="text-slate-500 text-xl sm:text-2xl">
 								No word available
 							</span>
 						)
