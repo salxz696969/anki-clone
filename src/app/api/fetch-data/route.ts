@@ -61,7 +61,7 @@ const fetchUserInfo = async (
 ): Promise<{ userLearntIds: string[]; count: number }> => {
 	try {
 		const userRef = adminDB
-			.collection("users2")
+			.collection("users")
 			.doc(uid)
 			.collection("learntWords");
 		const today = new Date();
@@ -87,7 +87,7 @@ const fetchLearntWords = async (
 	userLearntWordIds: string[]
 ): Promise<Words[]> => {
 	try {
-		const wordRef = adminDB.collection("core-2000-kanji");
+		const wordRef = adminDB.collection("n5-batch-1");
 		if (userLearntWordIds.length > 30) {
 			return [];
 		}
@@ -118,7 +118,7 @@ const fetchExcessWords = async (
 	uid: string
 ): Promise<Words[]> => {
 	try {
-		const wordRef = adminDB.collection("core-2000-kanji");
+		const wordRef = adminDB.collection("n5-batch-1");
 		const wordQuery = wordRef.limit(count + amountToSlice);
 		const wordSnapshot = await wordQuery.get();
 		const excessWords = wordSnapshot.docs.map((doc) => ({
@@ -132,7 +132,7 @@ const fetchExcessWords = async (
 		if (excessWords) {
 			const batch = adminDB.batch();
 			const writeToUserRef = adminDB
-				.collection("users2")
+				.collection("users")
 				.doc(uid)
 				.collection("learntWords");
 			const appendWord = excessWords.slice(count, excessWords.length);
