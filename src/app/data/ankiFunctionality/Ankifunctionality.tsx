@@ -8,7 +8,7 @@ type Doc = {
 	english: string;
 	kana: string;
 	kanji: string;
-	wordId: string;
+	_id: string;
 	sentence: string;
 	translation: string;
 };
@@ -27,7 +27,6 @@ const Ankifunctionality = () => {
 		const unsubscribe = onAuthStateChanged(auth, async (user) => {
 			if (!user) return;
 			setToken(await user.getIdToken());
-			// console.log(await user.getIdToken());
 		});
 		return () => unsubscribe();
 	}, []);
@@ -72,7 +71,6 @@ const Ankifunctionality = () => {
 					}
 				);
 				setWordForToday(res.data.wordsForToday);
-				console.log("Fetched words:", res.data.wordsForToday);
 			} catch (error) {
 				console.error(error);
 			} finally {
@@ -216,7 +214,7 @@ const Ankifunctionality = () => {
 	const dayRep = (difficulty: string) => {
 		setComponentMode("normal");
 		setInputAnswer("");
-		const wordId = wordForToday?.[counter].wordId;
+		const wordId = wordForToday?.[counter]._id;
 		if (wordId !== undefined) {
 			dayRepetition(wordId, difficulty);
 		}
@@ -356,3 +354,5 @@ const Ankifunctionality = () => {
 };
 
 export default Ankifunctionality;
+
+
