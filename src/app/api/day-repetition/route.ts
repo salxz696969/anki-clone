@@ -1,12 +1,6 @@
-import { adminAuth, adminDB } from "@/firebase/firebaseAdmin";
-import { FieldValue, Timestamp } from "firebase-admin/firestore";
 import { NextRequest, NextResponse } from "next/server";
-
-type UserDoc = {
-	studyLater: Timestamp;
-	dayIndicator: number;
-};
-
+import { adminAuth } from "@/firebase/firebaseAdmin";
+import LearntWords from "../mongoose/model/learntWordsModel";
 type IdAndDifficulty = {
 	id: string;
 	difficulty: string;
@@ -29,72 +23,58 @@ export const PATCH = async (req: NextRequest) => {
 	const decode = await adminAuth.verifyIdToken(token);
 	const uid = decode.uid;
 	try {
-		await batchUpdate(uid, idAndDifficultyArr);
+		await updateStudyLater(uid, idAndDifficultyArr);
+		return NextResponse.json({ status: 200 });
 	} catch (error) {
 		return NextResponse.json({ error: error, status: 400 });
 	}
-	return NextResponse.json({ status: 200 });
 };
 
-const batchUpdate = async (
+const updateStudyLater = async (
 	uid: string,
 	idAndDifficultyArr: IdAndDifficulty[]
 ) => {
-	const batch = adminDB.batch();
-	// console.log(idAndDifficultyArr)
 	for (const idAndDifficulty of idAndDifficultyArr) {
-		const ref = adminDB
-			.collection("users")
-			.doc(uid)
-			.collection("learntWords")
-			.doc(idAndDifficulty.id);
-		const snap = await ref.get();
-		if (!snap.exists) {
-			console.error(`Document not found for id: ${idAndDifficulty.id}`);
-			continue; // Skip if document doesn't exist
-		}
-		const data = snap.data() as UserDoc;
-		if (data.dayIndicator === 0) {
-			const today = new Date();	
-			const tomorrow = new Date(today);
-			tomorrow.setDate(tomorrow.getDate() + 1);
-			batch.update(ref, {
-				dayIndicator: FieldValue.increment(1),
-				studyLater: tomorrow,
+		const checkIfExist = await LearntWords.find({
+			userId: uid,
+			wordId: idAndDifficulty.id,
+		});
+		if (checkIfExist.length === 0) {
+			await LearntWords.create({
+				userId: uid,
+				wordId: idAndDifficulty.id,
+				studyLater: new Date(),
+				dayIndicator: 0,
 			});
-		} else {
-			const today = new Date();
-			const dayToUpdate = new Date(today);
-			switch (idAndDifficulty.difficulty) {
-				case "easy":
-					dayToUpdate.setDate(
-						dayToUpdate.getDate() + 2 * data.dayIndicator
-					);
-					batch.update(ref, {
-						dayIndicator: FieldValue.increment(1),
-						studyLater: dayToUpdate,
-					});
-					break;
-				case "medium":
-					dayToUpdate.setDate(
-						dayToUpdate.getDate() + data.dayIndicator
-					);
-					batch.update(ref, {
-						dayIndicator: FieldValue.increment(1),
-						studyLater: dayToUpdate,
-					});
-					break;
-				case "hard":
-					dayToUpdate.setDate(dayToUpdate.getDate() + 1);
-					batch.update(ref, {
-						dayIndicator: FieldValue.increment(1),
-						studyLater: dayToUpdate,
-					});
-					break;
-				default:
-					break;
-			}
+			continue;
 		}
+		const today = new Date();
+		const dayToUpdate = new Date(today);
+		switch (idAndDifficulty.difficulty) {
+			case "easy":
+				dayToUpdate.setDate(
+					today.getDate() + checkIfExist[0].dayIndicator * 2
+				);
+				break;
+			case "medium":
+				dayToUpdate.setDate(
+					today.getDate() + checkIfExist[0].dayIndicator
+				);
+				break;
+			case "hard":
+				dayToUpdate.setDate(today.getDate() + 1);
+				break;
+			default:
+				throw new Error("Invalid difficulty level");
+		}
+		await LearntWords.updateOne(
+			{ userId: uid, wordId: idAndDifficulty.id },
+			{
+				$set: {
+					studyLater: dayToUpdate,
+					dayIndicator: checkIfExist[0].dayIndicator + 1,
+				},
+			}
+		);
 	}
-	await batch.commit();
 };
