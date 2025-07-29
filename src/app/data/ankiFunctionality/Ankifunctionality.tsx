@@ -34,9 +34,7 @@ const Ankifunctionality = () => {
 	useEffect(() => {
 		if (!token) return;
 		const updatePastData = async () => {
-			const dataFromLocalStorage = localStorage.getItem(
-				"idAndDifficultyArray"
-			);
+			const dataFromLocalStorage = localStorage.getItem("idAndDifficultyArray");
 			if (dataFromLocalStorage) {
 				try {
 					await axios.patch(
@@ -71,6 +69,7 @@ const Ankifunctionality = () => {
 					}
 				);
 				setWordForToday(res.data.wordsForToday);
+				console.log("Words for today:", res.data.wordsForToday);
 			} catch (error) {
 				console.error(error);
 			} finally {
@@ -88,28 +87,16 @@ const Ankifunctionality = () => {
 
 	const dayRepetition = (id: string, difficulty: string) => {
 		try {
-			const checkLocalStorage = localStorage.getItem(
-				"idAndDifficultyArray"
-			);
+			const checkLocalStorage = localStorage.getItem("idAndDifficultyArray");
 			const wordToAddToLocalStorage = {
 				id: id,
 				difficulty: difficulty,
 			};
-			if (
-				!checkLocalStorage?.includes(
-					JSON.stringify(wordToAddToLocalStorage)
-				)
-			) {
+			if (!checkLocalStorage?.includes(JSON.stringify(wordToAddToLocalStorage))) {
 				const updatedArray = checkLocalStorage
-					? [
-							...JSON.parse(checkLocalStorage),
-							wordToAddToLocalStorage,
-					  ]
+					? [...JSON.parse(checkLocalStorage), wordToAddToLocalStorage]
 					: [wordToAddToLocalStorage];
-				localStorage.setItem(
-					"idAndDifficultyArray",
-					JSON.stringify(updatedArray)
-				);
+				localStorage.setItem("idAndDifficultyArray", JSON.stringify(updatedArray));
 			}
 		} catch (error) {
 			console.error(error);
@@ -306,15 +293,11 @@ const Ankifunctionality = () => {
 		>
 			<div className="bg-slate-800 shadow-2xl rounded-lg p-6 sm:p-8 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl border border-slate-600 mx-auto">
 				<div className="mb-8">
-					<label className="block text-white font-medium mb-2">
-						Select Amount
-					</label>
+					<label className="block text-white font-medium mb-2">Select Amount</label>
 					<select
 						className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/40 text-white bg-slate-700 text-lg transition-all duration-200"
 						value={desiredAmount}
-						onChange={(e) =>
-							setDesiredAmount(Number(e.target.value))
-						}
+						onChange={(e) => setDesiredAmount(Number(e.target.value))}
 					>
 						<option value={5}>5 words</option>
 						<option value={10}>10 words</option>
@@ -336,9 +319,7 @@ const Ankifunctionality = () => {
 						</span>
 					) : (
 						wordForToday?.[counter]?.kanji || (
-							<span className="text-slate-500 text-xl sm:text-2xl">
-								No word available
-							</span>
+							<span className="text-slate-500 text-xl sm:text-2xl">No word available</span>
 						)
 					)}
 				</div>
@@ -354,5 +335,3 @@ const Ankifunctionality = () => {
 };
 
 export default Ankifunctionality;
-
-

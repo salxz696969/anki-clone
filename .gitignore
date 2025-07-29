@@ -43,3 +43,4 @@ next-env.d.ts
 firebase-debug.log
 
 /src/app/api/test/route.ts
+/src/app/api/old

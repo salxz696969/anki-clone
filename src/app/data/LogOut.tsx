@@ -45,9 +45,7 @@ const LogOut = () => {
 				</div>
 
 				<div className="flex flex-col">
-					<span className="text-xs text-slate-400 font-medium">
-						Welcome back
-					</span>
+					<span className="text-xs text-slate-400 font-medium">Welcome back</span>
 					<span className="text-white font-semibold text-lg leading-tight">
 						{user?.displayName || (
 							<span className="inline-block">

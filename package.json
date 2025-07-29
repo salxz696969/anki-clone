@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@upstash/redis": "^1.35.2",
     "axios": "^1.9.0",
     "firebase": "^11.7.3",
     "firebase-admin": "^13.4.0",
@@ -16,7 +17,8 @@
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-firebase-hooks": "^5.1.1"
+    "react-firebase-hooks": "^5.1.1",
+    "redis": "^5.6.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

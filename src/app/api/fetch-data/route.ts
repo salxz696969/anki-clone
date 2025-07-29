@@ -4,6 +4,8 @@ import { NextRequest } from "next/server";
 import { adminAuth } from "@/firebase/firebaseAdmin";
 import LearntWords from "../mongoose/model/learntWordsModel";
 import Words from "../mongoose/model/wordsModel";
+import { Redis } from "@upstash/redis";
+const redis = Redis.fromEnv();
 export const POST = async (req: NextRequest) => {
 	try {
 		await connectToDatabase();
@@ -20,20 +22,28 @@ export const POST = async (req: NextRequest) => {
 				}
 			);
 		const decode = await adminAuth.verifyIdToken(token);
-        const uid=decode.uid;
-        const userInfo= await fetchUserInfo(uid);
-        if(userInfo.length<desiredAmount){
-            const pastLearntWords=await LearntWords.find()
-            const excessWords=await Words.aggregate([
-                {
-                    $match: {
-                        _id: { $nin: pastLearntWords.map(word => word._id) }
-                    }
-                },
-                { $sample: { size: desiredAmount - userInfo.length } }
-            ]);
-            return NextResponse.json({wordsForToday:[...userInfo,...excessWords]});
-        }
+		const uid = decode.uid;
+		const userInfo = await fetchUserInfo(uid);
+		let pastLearntWords = [];
+		const redisCalls = userInfo.map((word) => redis.hgetall(`word:${word.wordId}`));
+		const pastLearntWordsRaw = await Promise.all(redisCalls);
+		pastLearntWords = pastLearntWordsRaw.filter((obj) => obj && Object.keys(obj).length > 0);
+
+		if (pastLearntWords.length === 0) {
+			pastLearntWords = await Words.find({ _id: { $in: userInfo.map((word) => word.wordId) } });
+		}
+		if (userInfo.length < desiredAmount) {
+			const excessWords = await Words.aggregate([
+				{
+					$match: {
+						_id: { $nin: pastLearntWords.map((word) => word._id) },
+					},
+				},
+				{ $sample: { size: desiredAmount - userInfo.length } },
+			]);
+			return NextResponse.json({ wordsForToday: [...pastLearntWords, ...excessWords] });
+		}
+		return NextResponse.json({ wordsForToday: pastLearntWords });
 	} catch (error) {
 		return NextResponse.json({ message: "Error", error }, { status: 500 });
 	}
@@ -41,13 +51,13 @@ export const POST = async (req: NextRequest) => {
 
 const fetchUserInfo = async (uid: string) => {
 	try {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        const userData = await LearntWords.find({ 
-            userId: uid,
-            studyLater: { $lt: today },
-        });
-        return userData
+		const today = new Date();
+		today.setHours(0, 0, 0, 0);
+		const userData = await LearntWords.find({
+			userId: uid,
+			studyLater: { $lt: today },
+		});
+		return userData;
 	} catch (error) {
 		console.error("Error fetching user info:", error);
 		throw error;
