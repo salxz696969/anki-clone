@@ -32,11 +32,11 @@ export const PATCH = async (req: NextRequest) => {
 
 const updateStudyLater = async (uid: string, idAndDifficultyArr: IdAndDifficulty[]) => {
 	for (const idAndDifficulty of idAndDifficultyArr) {
-		const checkIfExist = await LearntWords.find({
+		const checkIfExist = await LearntWords.findOne({
 			userId: uid,
 			wordId: idAndDifficulty.id,
 		});
-		if (checkIfExist.length === 0) {
+		if (!checkIfExist) {
 			await LearntWords.create({
 				userId: uid,
 				wordId: idAndDifficulty.id,
@@ -49,10 +49,10 @@ const updateStudyLater = async (uid: string, idAndDifficultyArr: IdAndDifficulty
 		const dayToUpdate = new Date(today);
 		switch (idAndDifficulty.difficulty) {
 			case "easy":
-				dayToUpdate.setDate(today.getDate() + checkIfExist[0].dayIndicator * 2);
+				dayToUpdate.setDate(today.getDate() + checkIfExist.dayIndicator * 2);
 				break;
 			case "medium":
-				dayToUpdate.setDate(today.getDate() + checkIfExist[0].dayIndicator);
+				dayToUpdate.setDate(today.getDate() + checkIfExist.dayIndicator);
 				break;
 			case "hard":
 				dayToUpdate.setDate(today.getDate() + 1);
@@ -65,7 +65,7 @@ const updateStudyLater = async (uid: string, idAndDifficultyArr: IdAndDifficulty
 			{
 				$set: {
 					studyLater: dayToUpdate,
-					dayIndicator: checkIfExist[0].dayIndicator + 1,
+					dayIndicator: checkIfExist.dayIndicator + 1,
 				},
 			}
 		);

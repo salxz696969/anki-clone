@@ -40,7 +40,7 @@ const Ankifunctionality = () => {
 					await axios.patch(
 						`${process.env.NEXT_PUBLIC_URL}/api/day-repetition`,
 						{
-							idAndDifficulty: JSON.parse(dataFromLocalStorage),
+							idAndDifficultyArray: JSON.parse(dataFromLocalStorage),
 						},
 						{
 							headers: {
@@ -69,7 +69,6 @@ const Ankifunctionality = () => {
 					}
 				);
 				setWordForToday(res.data.wordsForToday);
-				console.log("Words for today:", res.data.wordsForToday);
 			} catch (error) {
 				console.error(error);
 			} finally {
@@ -88,16 +87,19 @@ const Ankifunctionality = () => {
 	const dayRepetition = (id: string, difficulty: string) => {
 		try {
 			const checkLocalStorage = localStorage.getItem("idAndDifficultyArray");
-			const wordToAddToLocalStorage = {
-				id: id,
-				difficulty: difficulty,
-			};
-			if (!checkLocalStorage?.includes(JSON.stringify(wordToAddToLocalStorage))) {
-				const updatedArray = checkLocalStorage
-					? [...JSON.parse(checkLocalStorage), wordToAddToLocalStorage]
-					: [wordToAddToLocalStorage];
-				localStorage.setItem("idAndDifficultyArray", JSON.stringify(updatedArray));
+			const wordToAddToLocalStorage = { id, difficulty };
+
+			let updatedArray = [];
+			if (checkLocalStorage) {
+				updatedArray = JSON.parse(checkLocalStorage);
+				// Check if the id already exists
+				if (!updatedArray.some((item: { id: string; difficulty: string }) => item.id === id)) {
+					updatedArray.push(wordToAddToLocalStorage);
+				}
+			} else {
+				updatedArray = [wordToAddToLocalStorage];
 			}
+			localStorage.setItem("idAndDifficultyArray", JSON.stringify(updatedArray));
 		} catch (error) {
 			console.error(error);
 		}
@@ -251,18 +253,21 @@ const Ankifunctionality = () => {
 
 			<div className="grid grid-cols-3 gap-3">
 				<button
+					type="button"
 					className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold py-3 px-4 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
 					onClick={() => dayRep("easy")}
 				>
 					Easy
 				</button>
 				<button
+					type="button"
 					className="bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-semibold py-3 px-4 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
 					onClick={() => dayRep("medium")}
 				>
 					Medium
 				</button>
 				<button
+					type="button"
 					className="bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold py-3 px-4 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
 					onClick={() => dayRep("hard")}
 				>

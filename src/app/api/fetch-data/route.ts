@@ -21,11 +21,17 @@ export const POST = async (req: NextRequest) => {
 					status: 401,
 				}
 			);
+			
 		const decode = await adminAuth.verifyIdToken(token);
 		const uid = decode.uid;
 		const userInfo = await fetchUserInfo(uid);
 		let pastLearntWords = [];
-		const redisCalls = userInfo.map((word) => redis.hgetall(`word:${word.wordId}`));
+		const redisCalls = userInfo.map((word) =>
+			redis.hgetall(`word:${word.wordId}`).then((obj) => ({
+				...obj,
+				_id: word.wordId, // Add _id key from wordId
+			}))
+		);
 		const pastLearntWordsRaw = await Promise.all(redisCalls);
 		pastLearntWords = pastLearntWordsRaw.filter((obj) => obj && Object.keys(obj).length > 0);
 
