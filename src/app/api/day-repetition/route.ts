@@ -9,8 +9,8 @@ type IdAndDifficulty = {
 export const PATCH = async (req: NextRequest) => {
 	const token = req.headers.get("authorization")?.split("Bearer ")[1];
 	const body = await req.json();
-	const { idAndDifficulty } = body;
-	const idAndDifficultyArr: IdAndDifficulty[] = idAndDifficulty;
+	const { idAndDifficultyArray } = body;
+	const idAndDifficultyArr: IdAndDifficulty[] = idAndDifficultyArray;
 	if (!token)
 		return NextResponse.json(
 			{
