@@ -3,6 +3,7 @@ import { auth } from "@/firebase/firebaseConfig";
 import axios from "axios";
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
+import LogOut from "../LogOut";
 
 type Doc = {
 	english: string;
@@ -11,6 +12,7 @@ type Doc = {
 	_id: string;
 	sentence: string;
 	translation: string;
+	isSkipped: boolean;
 };
 
 const Ankifunctionality = () => {
@@ -68,7 +70,7 @@ const Ankifunctionality = () => {
 						},
 					}
 				);
-				setWordForToday(res.data.wordsForToday);
+				setWordForToday(res.data.wordsForToday.map((word: Doc) => ({ ...word, isSkipped: false })));
 			} catch (error) {
 				console.error(error);
 			} finally {
@@ -124,12 +126,23 @@ const Ankifunctionality = () => {
 		}
 	};
 
+	const handleSkip = () => {
+		const currentData = wordForToday.map((word, index) => {
+			if (index === counter) {
+				return { ...word, isSkipped: true };
+			}
+			return word;
+		});
+		setWordForToday(currentData);
+		setComponentMode("skip");
+	};
+
 	const normalComponent = () => (
 		<>
 			<input
 				disabled={isDisabled()}
 				type="text"
-				className="w-full mb-6 px-4 py-3 border-2 border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/40 text-white bg-slate-700 placeholder-slate-300 text-lg transition-all duration-200"
+				className="w-full mb-6 px-4 py-3 border-2 border-slate-50/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/40 text-white bg-slate-700 placeholder-slate-300 text-lg transition-all duration-300 shadow-lg"
 				placeholder="Type your answer here..."
 				value={inputAnswer}
 				onKeyDown={(e) => {
@@ -142,14 +155,14 @@ const Ankifunctionality = () => {
 			<div className="flex gap-3">
 				<button
 					disabled={isDisabled()}
-					className="flex-1 bg-slate-600 hover:bg-slate-700 active:bg-slate-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/20 hover:border-white/40 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-					onClick={() => setComponentMode("skip")}
+					className="flex-1 border-slate-50/30 border-2 bg-gray-600 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+					onClick={handleSkip}
 				>
 					Skip
 				</button>
 				<button
 					disabled={isDisabled()}
-					className="flex-1 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+					className="flex-1 border-slate-50/30 border-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
 					onClick={submit}
 				>
 					Submit
@@ -171,28 +184,28 @@ const Ankifunctionality = () => {
 
 	const skipComponent = () => (
 		<>
-			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20 break-words">
+			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-slate-800/50 py-3 px-4 rounded-xl border-2 border-slate-50/30 shadow-lg break-words">
 				{wordForToday?.[counter].english}
 			</div>
-			<div className="text-2xl text-blue-300 text-center mb-6 font-mono bg-white/5 py-3 px-4 rounded-lg border border-white/20 break-words">
+			<div className="text-2xl text-blue-300 text-center mb-6 font-mono bg-slate-800/50 py-4 px-4 rounded-xl border-2 border-slate-50/30 shadow-lg break-words">
 				{wordForToday?.[counter].kana}
 			</div>
-			<div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border border-white/10 shadow-lg">
+			<div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border-2 border-slate-50/30 shadow-lg">
 				<div className="text-sm font-medium text-slate-300 mb-3 text-center uppercase tracking-wider">
 					Example Sentence
 				</div>
 				<div className="space-y-3">
-					<div className="text-lg sm:text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-lg border border-slate-400/20 break-words">
+					<div className="text-lg sm:text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-xl border border-slate-400/20 break-words">
 						{wordForToday?.[counter].sentence}
 					</div>
-					<div className="text-lg sm:text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-lg border border-slate-400/20 break-words">
+					<div className="text-lg sm:text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-xl border border-slate-400/20 break-words">
 						{wordForToday?.[counter].translation}
 					</div>
 				</div>
 			</div>
 
 			<button
-				className="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+				className="w-full border-slate-50/30 border-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-2xl hover:shadow-blue-500/25 active:scale-95 active:translate-y-0"
 				onClick={continueToTheNext}
 			>
 				Continue
@@ -227,115 +240,136 @@ const Ankifunctionality = () => {
 
 	const studyAgainForThisSession = () => {
 		const tempWord = wordForToday.filter((_, index) => index !== counter);
-		setWordForToday([...tempWord, wordForToday[counter]]);
+		setWordForToday([...tempWord, { ...wordForToday[counter], isSkipped: false }]);
 	};
 
 	const studyAgainComponent = () => (
 		<form className="flex flex-col gap-4">
-			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-white/10 py-2 px-4 rounded-lg border border-white/20 break-words">
+			<div className="text-xl text-emerald-300 text-center mb-3 font-semibold tracking-wide bg-slate-800/50 py-3 px-4 rounded-xl border-2 border-slate-50/30 shadow-lg break-words">
 				{wordForToday?.[counter].english}
 			</div>
 
 			{/* Styled Example Sentence Section */}
-			<div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border border-white/10 shadow-lg">
+			<div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 rounded-xl p-4 border-2 border-slate-50/30 shadow-lg">
 				<div className="text-sm font-medium text-slate-300 mb-3 text-center uppercase tracking-wider">
 					Example Sentence
 				</div>
 				<div className="space-y-3">
-					<div className="text-lg sm:text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-lg border border-slate-400/20 break-words">
+					<div className="text-lg sm:text-xl text-sky-300 text-center font-bold leading-relaxed bg-slate-900/40 py-3 px-4 rounded-xl border border-slate-400/20 break-words">
 						{wordForToday?.[counter].sentence}
 					</div>
-					<div className="text-lg sm:text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-lg border border-slate-400/20 break-words">
+					<div className="text-lg sm:text-xl text-slate-200 text-center font-bold leading-relaxed bg-slate-900/30 py-2 px-4 rounded-xl border border-slate-400/20 break-words">
 						{wordForToday?.[counter].translation}
 					</div>
 				</div>
 			</div>
 
-			<div className="grid grid-cols-3 gap-3">
-				<button
-					type="button"
-					className="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-semibold py-3 px-4 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-					onClick={() => dayRep("easy")}
-				>
-					Easy
-				</button>
-				<button
-					type="button"
-					className="bg-amber-600 hover:bg-amber-700 active:bg-amber-800 text-white font-semibold py-3 px-4 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-					onClick={() => dayRep("medium")}
-				>
-					Medium
-				</button>
-				<button
-					type="button"
-					className="bg-red-600 hover:bg-red-700 active:bg-red-800 text-white font-semibold py-3 px-4 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-					onClick={() => dayRep("hard")}
-				>
-					Hard
-				</button>
-			</div>
-			<button
-				className="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold py-3 px-6 rounded-lg border-2 border-white/30 hover:border-white/50 transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
-				onClick={() => studyAgain()}
-			>
-				Study Again
-			</button>
+			{!wordForToday?.[counter].isSkipped && (
+				<div className="grid grid-cols-3 gap-3">
+					<button
+						type="button"
+						className="border-slate-50/30 border-2 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/25 active:scale-95 active:translate-y-0"
+						onClick={() => dayRep("easy")}
+					>
+						Easy
+					</button>
+					<button
+						type="button"
+						className="border-slate-50/30 border-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-2xl hover:shadow-amber-500/25 active:scale-95 active:translate-y-0"
+						onClick={() => dayRep("medium")}
+					>
+						Medium
+					</button>
+					<button
+						type="button"
+						className="border-slate-50/30 border-2 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-2xl hover:shadow-red-500/25 active:scale-95 active:translate-y-0"
+						onClick={() => dayRep("hard")}
+					>
+						Hard
+					</button>
+					<button
+						className="col-span-3 border-slate-50/30 border-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-2xl hover:shadow-blue-500/25 active:scale-95 active:translate-y-0"
+						onClick={() => studyAgain()}
+					>
+						Study Again
+					</button>
+				</div>
+			)}
+			{wordForToday?.[counter].isSkipped && (
+				<div className="grid grid-cols-2 gap-3">
+					<button
+						className="border-slate-50/30 border-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-2xl hover:shadow-slate-500/25 active:scale-95 active:translate-y-0"
+						onClick={() => studyAgain()}
+					>
+						Study Again
+					</button>
+					<button
+						className="border-slate-50/30 border-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 shadow-lg hover:shadow-2xl hover:shadow-blue-500/25 active:scale-95 active:translate-y-0"
+						onClick={() => dayRep("hard")}
+					>
+						Continue
+					</button>
+				</div>
+			)}
 		</form>
 	);
 
 	return (
-		<div
-			className="flex flex-col items-center justify-center min-h-screen bg-slate-900 p-4"
-			onKeyDown={(e) => {
-				if (e.key === "1") {
-					dayRep("easy");
-				} else if (e.key === "2") {
-					dayRep("medium");
-				} else if (e.key === "3") {
-					dayRep("hard");
-				}
-			}}
-		>
-			<div className="bg-slate-800 shadow-2xl rounded-lg p-6 sm:p-8 w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl border border-slate-600 mx-auto">
-				<div className="mb-8">
-					<label className="block text-white font-medium mb-2">Select Amount</label>
-					<select
-						className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/40 text-white bg-slate-700 text-lg transition-all duration-200"
-						value={desiredAmount}
-						onChange={(e) => setDesiredAmount(Number(e.target.value))}
-					>
-						<option value={5}>5 words</option>
-						<option value={10}>10 words</option>
-						<option value={15}>15 words</option>
-						<option value={20}>20 words</option>
-						<option value={25}>25 words</option>
-						<option value={30}>30 words</option>
-					</select>
-				</div>
+		<>
+			<LogOut />
+			<div
+				className="flex flex-col items-center justify-start min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-2 pt-20"
+				onKeyDown={(e) => {
+					if (e.key === "1") {
+						dayRep("easy");
+					} else if (e.key === "2") {
+						dayRep("medium");
+					} else if (e.key === "3") {
+						dayRep("hard");
+					}
+				}}
+			>
+				<div className="bg-slate-800 shadow-2xl rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl border-2 border-slate-50/30 mx-auto">
+					<div className="mb-6 sm:mb-8">
+						<label className="block text-white font-medium mb-2 text-sm sm:text-base">Select Amount</label>
+						<select
+							className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-slate-50/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500/40 text-white bg-slate-700 text-base sm:text-lg transition-all duration-300 shadow-lg"
+							value={desiredAmount}
+							onChange={(e) => setDesiredAmount(Number(e.target.value))}
+						>
+							<option value={5}>5 words</option>
+							<option value={10}>10 words</option>
+							<option value={15}>15 words</option>
+							<option value={20}>20 words</option>
+							<option value={25}>25 words</option>
+							<option value={30}>30 words</option>
+						</select>
+					</div>
 
-				<div className="text-2xl sm:text-3xl md:text-4xl text-center mb-8 text-slate-800 bg-white rounded-lg py-6 sm:py-8 px-4 shadow-inner border-2 border-white/50 min-h-[100px] sm:min-h-[120px] flex items-center justify-center break-words">
-					{loading ? (
-						<span className="inline-block">
-							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite]"></span>
-							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.2s]"></span>
-							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.4s]"></span>
-							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.6s]"></span>
-							<span className="inline-block w-1 h-1 mx-[1px] bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.8s]"></span>
-						</span>
-					) : (
-						wordForToday?.[counter]?.kanji || (
-							<span className="text-slate-500 text-xl sm:text-2xl">No word available</span>
-						)
-					)}
-				</div>
+					<div className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl text-center mb-6 sm:mb-8 text-slate-800 bg-white rounded-xl py-6 sm:py-8 md:py-10 px-4 shadow-inner border-2 border-slate-50/50 min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[200px] flex items-center justify-center break-words">
+						{loading ? (
+							<span className="inline-block">
+								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite]"></span>
+								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.2s]"></span>
+								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.4s]"></span>
+								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.6s]"></span>
+								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.8s]"></span>
+							</span>
+						) : (
+							wordForToday?.[counter]?.kanji || (
+								<span className="text-slate-500 text-xl sm:text-2xl md:text-3xl">No word available</span>
+							)
+						)}
+					</div>
 
-				<div className="space-y-4">
-					{componentMode === "normal" && normalComponent()}
-					{componentMode === "skip" && skipComponent()}
-					{componentMode === "studyAgain" && studyAgainComponent()}
+					<div className="space-y-3 sm:space-y-4">
+						{componentMode === "normal" && normalComponent()}
+						{componentMode === "skip" && skipComponent()}
+						{componentMode === "studyAgain" && studyAgainComponent()}
+					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
