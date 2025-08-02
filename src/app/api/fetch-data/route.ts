@@ -5,6 +5,7 @@ import { adminAuth } from "@/firebase/firebaseAdmin";
 import LearntWords from "../mongoose/model/learntWordsModel";
 import Words from "../mongoose/model/wordsModel";
 import { Redis } from "@upstash/redis";
+import mongoose from "mongoose";
 const redis = Redis.fromEnv();
 export const POST = async (req: NextRequest) => {
 	try {
@@ -21,7 +22,7 @@ export const POST = async (req: NextRequest) => {
 					status: 401,
 				}
 			);
-			
+
 		const decode = await adminAuth.verifyIdToken(token);
 		const uid = decode.uid;
 		const userInfo = await fetchUserInfo(uid);
@@ -39,10 +40,12 @@ export const POST = async (req: NextRequest) => {
 			pastLearntWords = await Words.find({ _id: { $in: userInfo.map((word) => word.wordId) } });
 		}
 		if (userInfo.length < desiredAmount) {
+			const pastWordsForUser = await LearntWords.find({ userId: uid });
+			const learntWordIds = pastWordsForUser.map((word) => new mongoose.Types.ObjectId(word.wordId));
 			const excessWords = await Words.aggregate([
 				{
 					$match: {
-						_id: { $nin: pastLearntWords.map((word) => word._id) },
+						_id: { $nin: learntWordIds },
 					},
 				},
 				{ $sample: { size: desiredAmount - userInfo.length } },

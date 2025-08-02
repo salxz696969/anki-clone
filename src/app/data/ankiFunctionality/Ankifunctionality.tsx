@@ -329,7 +329,7 @@ const Ankifunctionality = () => {
 					}
 				}}
 			>
-				<div className="bg-slate-800 shadow-2xl rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl border-2 border-slate-50/30 mx-auto">
+				<div className="bg-slate-800 shadow-2xl rounded-xl p-4 sm:p-6 md:p-8 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl border-2 border-slate-50/30 mx-auto mt-16">
 					<div className="mb-6 sm:mb-8">
 						<label className="block text-white font-medium mb-2 text-sm sm:text-base">Select Amount</label>
 						<select
@@ -349,15 +349,17 @@ const Ankifunctionality = () => {
 					<div className="text-4xl sm:text-4xl md:text-5xl lg:text-5xl text-center mb-6 sm:mb-8 text-slate-800 bg-white rounded-xl py-6 sm:py-8 md:py-10 px-4 shadow-inner border-2 border-slate-50/50 min-h-[140px] sm:min-h-[160px] md:min-h-[180px] lg:min-h-[200px] flex items-center justify-center break-words">
 						{loading ? (
 							<span className="inline-block">
-								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite]"></span>
-								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.2s]"></span>
-								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.4s]"></span>
-								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.6s]"></span>
-								<span className="inline-block w-2 h-2 mx-1 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.8s]"></span>
+								<span className="inline-block w-1 h-1 mx-0.5 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite]"></span>
+								<span className="inline-block w-1 h-1 mx-0.5 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.2s]"></span>
+								<span className="inline-block w-1 h-1 mx-0.5 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.4s]"></span>
+								<span className="inline-block w-1 h-1 mx-0.5 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.6s]"></span>
+								<span className="inline-block w-1 h-1 mx-0.5 bg-slate-950 rounded-full animate-[fade_1s_ease-in-out_infinite] [animation-delay:0.8s]"></span>
 							</span>
 						) : (
 							wordForToday?.[counter]?.kanji || (
-								<span className="text-slate-500 text-xl sm:text-2xl md:text-3xl">No word available</span>
+								<span className="text-slate-500 text-xl sm:text-2xl md:text-3xl">
+									No word available
+								</span>
 							)
 						)}
 					</div>
