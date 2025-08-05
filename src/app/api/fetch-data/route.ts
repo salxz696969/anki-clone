@@ -25,7 +25,7 @@ export const POST = async (req: NextRequest) => {
 
 		const decode = await adminAuth.verifyIdToken(token);
 		const uid = decode.uid;
-		const userInfo = await fetchUserInfo(uid);
+		const userInfo = await fetchUserInfo(uid, desiredAmount);
 		let pastLearntWords = [];
 		const redisCalls = userInfo.map((word) =>
 			redis.hgetall(`word:${word.wordId}`).then((obj) => ({
@@ -50,22 +50,26 @@ export const POST = async (req: NextRequest) => {
 				},
 				{ $sample: { size: desiredAmount - userInfo.length } },
 			]);
-			return NextResponse.json({ wordsForToday: [...pastLearntWords, ...excessWords] });
+			const allWords = [...pastLearntWords, ...excessWords];
+			const shuffledWords = allWords.sort(() => Math.random() - 0.5);
+			return NextResponse.json({ wordsForToday: shuffledWords });
 		}
-		return NextResponse.json({ wordsForToday: pastLearntWords });
+		const shuffledPastLearntWords = pastLearntWords.sort(() => Math.random() - 0.5);
+		return NextResponse.json({ wordsForToday: shuffledPastLearntWords });
 	} catch (error) {
 		return NextResponse.json({ message: "Error", error }, { status: 500 });
 	}
 };
 
-const fetchUserInfo = async (uid: string) => {
+const fetchUserInfo = async (uid: string, desiredAmount:number) => {
 	try {
 		const today = new Date();
 		today.setHours(0, 0, 0, 0);
+		const limit = Math.ceil(desiredAmount * 0.4);
 		const userData = await LearntWords.find({
 			userId: uid,
 			studyLater: { $lt: today },
-		});
+		}).limit(limit);
 		return userData;
 	} catch (error) {
 		console.error("Error fetching user info:", error);
