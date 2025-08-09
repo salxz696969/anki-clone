@@ -37,10 +37,25 @@ const updateStudyLater = async (uid: string, idAndDifficultyArr: IdAndDifficulty
 			wordId: idAndDifficulty.id,
 		});
 		if (!checkIfExist) {
+			const today = new Date();
+			const studyLater = new Date(today);
+			switch (idAndDifficulty.difficulty) {
+				case "easy":
+					studyLater.setDate(today.getDate() + 3);
+					break;
+				case "medium":
+					studyLater.setDate(today.getDate() + 2);
+					break;
+				case "hard":
+					studyLater.setDate(today.getDate() + 1);
+					break;
+				default:
+					throw new Error("Invalid difficulty level");
+			}
 			await LearntWords.create({
 				userId: uid,
 				wordId: idAndDifficulty.id,
-				studyLater: new Date(),
+				studyLater: studyLater,
 				dayIndicator: 0,
 			});
 			continue;
