@@ -8,7 +8,7 @@ const Home = () => {
 	useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                router.push("/data");
+                router.push("/anki");
             }
         });
         return () => unsubscribe();

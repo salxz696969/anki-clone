@@ -21,7 +21,7 @@ const SignInForm = () => {
 
 	useEffect(() => {
 		if (user) {
-			router.push("/data");
+			router.push("/anki");
 		}
 	});
 

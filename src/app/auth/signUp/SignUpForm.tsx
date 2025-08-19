@@ -33,7 +33,7 @@ const SignUpForm = () => {
 
 	useEffect(() => {
 		if (user) {
-			router.push("/data");
+			router.push("/anki");
 		}
 	});
 
