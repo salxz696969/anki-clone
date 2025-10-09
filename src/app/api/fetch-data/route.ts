@@ -79,7 +79,9 @@ const fetchUserInfo = async (uid: string, desiredAmount: number) => {
 		const userData = await LearntWords.find({
 			userId: uid,
 			studyLater: { $lt: today },
-		}).limit(limit);
+		})
+			.sort({ studyLater: 1, createdAt: 1 })
+			.limit(limit);
 		return userData;
 	} catch (error) {
 		console.error("Error fetching user info:", error);
