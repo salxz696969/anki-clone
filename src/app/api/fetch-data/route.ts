@@ -26,12 +26,20 @@ export const POST = async (req: NextRequest) => {
 		const uid = decode.uid;
 		const userInfo = await fetchUserInfo(uid, desiredAmount);
 		let pastLearntWords = [];
-		const redisCalls = userInfo.map((word) =>
-			redis.hgetall(`word:${word.wordId}`).then((obj) => ({
-				...obj,
-				_id: word.wordId,
-			}))
-		);
+		const redisCalls = userInfo.map(async (word) => {
+			if (!word.wordId) return null;
+			try {
+				const obj = await redis.hgetall(`word:${word.wordId}`);
+				if (!obj || Object.keys(obj).length === 0) return null;
+				return {
+					...obj,
+					_id: word.wordId,
+				};
+			} catch (err) {
+				console.error("Redis error for word:", word.wordId, err);
+				return null;
+			}
+		});
 		const pastLearntWordsRaw = await Promise.all(redisCalls);
 		pastLearntWords = pastLearntWordsRaw.filter((obj) => obj && Object.keys(obj).length > 0);
 		if (pastLearntWords.length === 0) {
